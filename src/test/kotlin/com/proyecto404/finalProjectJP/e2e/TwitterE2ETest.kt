@@ -9,16 +9,13 @@ import org.junit.jupiter.api.Test
 class TwitterE2ETest {
     @Test
     fun `successful login`() {
-        input.willRead("$ALICE_LOGIN_INPUT")
-
         console.run()
 
-        assertThat(output.contents).endsWith("Logged in as $ALICE_USERNAME!")
+        assertThat(output.contents).isEqualTo("> $aliceLoginInput\n $loginMessage")
     }
-
-    private val ALICE_LOGIN_INPUT = "login @alice 777"
-    private val ALICE_USERNAME = "@alice"
+    private val loginMessage = "Logged in as @alice!"
+    private val aliceLoginInput = "login @alice 777"
     private val output = FakeOutput()
-    private val input = InputStub("$ALICE_LOGIN_INPUT ", output)
+    private val input = InputStub("$aliceLoginInput ", output)
     private val console = Console(input, output)
 }

@@ -1,34 +1,45 @@
 package com.proyecto404.finalProjectJP.console
 
 import com.proyecto404.finalProjectJP.console.commands.Command
-import com.proyecto404.finalProjectJP.console.io.ConsoleOutput
+import com.proyecto404.finalProjectJP.console.io.FakeOutput
 import com.proyecto404.finalProjectJP.console.io.InputStub
-import com.proyecto404.finalProjectJP.core.Core
-import io.mockk.mockk
-import io.mockk.verify
+import io.mockk.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class ConsoleTest {
-
     @Test
-    fun `reads login command`() {
-        val command = console.readCommand()
-
-        assertThat(command).isEqualTo(LOGIN_COMMAND)
-    }
-
-    @Test
-    fun `executes login command`() {
+    fun `reads valid login command from prompt`() {
         console.run()
 
-        verify { console.execute(LOGIN_COMMAND) }
+        assertThat(output.contents).isEqualTo("> $aliceLoginInput\n $loginMessage")
     }
 
-    private val mockCore = mockk<Core>(relaxed = true)
-    private val LOGIN_COMMAND = Command("login", listOf<String>("@alice", "777"))
-    private val ALICE_LOGIN_INPUT = "login @alice 777"
-    private val output = ConsoleOutput()
-    private val input = InputStub("$ALICE_LOGIN_INPUT")
+    @Test
+    fun `process valid login command`() {
+        console.run()
+
+        val command = console.readCommand()
+
+        assertThat(command).isEqualTo(loginCommand)
+    }
+
+
+    @Test
+    fun `executes inserted command after run`() {
+        consoleSpy.run()
+
+        verifyOrder {
+            consoleSpy.readCommand()
+            consoleSpy.execute(loginCommand)
+        }
+    }
+
+    private val loginMessage = "Logged in as @alice!"
+    private val loginCommand = Command("login", listOf<String>("@alice", "777"))
+    private val aliceLoginInput = "login @alice 777"
+    private val output = FakeOutput()
+    private val input = InputStub("$aliceLoginInput", output)
+    private val consoleSpy = spyk(Console(input, output))
     private val console = Console(input, output)
 }

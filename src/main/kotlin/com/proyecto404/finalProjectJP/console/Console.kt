@@ -9,7 +9,7 @@ import com.proyecto404.finalProjectJP.core.Core
 class Console(private val input: Input, private val output: Output) {
     private val core = Core();
 
-    private val commandHandlerFactory = CommandHandlerFactory(core, output)
+    val commandHandlerFactory = CommandHandlerFactory(core, output)
 
     fun run(){
         val command = readCommand()

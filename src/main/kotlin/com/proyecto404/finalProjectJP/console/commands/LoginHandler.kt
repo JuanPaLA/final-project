@@ -4,7 +4,7 @@ import com.proyecto404.finalProjectJP.console.io.Output
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.useCases.Login
 
-class LoginCommandHandler(val core: Core, val output: Output) : CommandHandler {
+class LoginHandler(val core: Core, private val output: Output) : CommandHandler {
     override fun handle(command: Command) {
         val commandParts = command.args.joinToString(" ").split(" ")
         val username = commandParts[0]

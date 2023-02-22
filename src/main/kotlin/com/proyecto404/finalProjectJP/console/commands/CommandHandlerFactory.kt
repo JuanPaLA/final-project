@@ -7,7 +7,7 @@ import com.proyecto404.finalProjectJP.core.Core
 class CommandHandlerFactory(private val core: Core, private val output: Output) {
     fun createFor(name: String): CommandHandler {
         return when (name) {
-            "login" -> LoginCommandHandler(core, output)
+            "login" -> LoginHandler(core, output)
             else -> throw InvalidCommandException()
         }
     }
