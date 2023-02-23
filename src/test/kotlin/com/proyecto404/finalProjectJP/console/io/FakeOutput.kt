@@ -2,12 +2,14 @@ package com.proyecto404.finalProjectJP.console.io
 
 class FakeOutput: Output {
     var contents = ""
+    val lines get() = contents.lines().dropLast(1)
 
-    override fun println(message: String) {
-        contents += message + "\n"
+    override fun println(text: String) {
+        print(text)
+        print("\n")
     }
 
-    fun add(content: String){
-        contents += "> $content\n"
+    override fun print(text: String) {
+        contents += text
     }
 }

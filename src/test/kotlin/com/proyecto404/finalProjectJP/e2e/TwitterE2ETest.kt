@@ -1,6 +1,6 @@
 package com.proyecto404.finalProjectJP.e2e
 
-import com.proyecto404.finalProjectJP.console.Console
+import com.proyecto404.finalProjectJP.console.ConsoleApp
 import com.proyecto404.finalProjectJP.console.io.InputStub
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
 import org.assertj.core.api.Assertions.assertThat
@@ -8,14 +8,23 @@ import org.junit.jupiter.api.Test
 
 class TwitterE2ETest {
     @Test
-    fun `successful login`() {
+    fun login() {
+        input.willRead("signup @alice 777")
+        input.willRead("login @alice 777")
+        input.willRead("exit")
+
         console.run()
 
-        assertThat(output.contents).isEqualTo("> $aliceLoginInput\n $loginMessage")
+        assertThat(output.lines).containsExactly(
+            "> signup @alice 777",
+            "> login @alice 777",
+            "Logged in as @alice",
+            "@alice> exit",
+            "bye bye",
+        )
     }
-    private val loginMessage = "Logged in as @alice!"
-    private val aliceLoginInput = "login @alice 777"
+
     private val output = FakeOutput()
-    private val input = InputStub("$aliceLoginInput ", output)
-    private val console = Console(input, output)
+    private val input = InputStub("", output)
+    private val console = ConsoleApp(input, output)
 }
