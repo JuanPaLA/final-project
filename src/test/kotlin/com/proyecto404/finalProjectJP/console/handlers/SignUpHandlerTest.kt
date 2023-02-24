@@ -5,7 +5,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.SignUpHandler
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
 import com.proyecto404.finalProjectJP.core.Core
-import com.proyecto404.finalProjectJP.core.domain.useCases.SignUp
+import com.proyecto404.finalProjectJP.core.useCases.SignUp
 import io.mockk.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

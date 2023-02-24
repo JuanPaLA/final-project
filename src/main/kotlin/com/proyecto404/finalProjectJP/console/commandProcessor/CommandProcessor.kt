@@ -5,7 +5,7 @@ package com.proyecto404.finalProjectJP.console.commandProcessor
 import com.proyecto404.finalProjectJP.console.InvalidSignUpError
 import com.proyecto404.finalProjectJP.console.io.Input
 import com.proyecto404.finalProjectJP.console.io.Output
-import com.proyecto404.finalProjectJP.core.inMemory.UserNotFoundError
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.UserNotFoundError
 
 class CommandProcessor(private val input: Input, private val output: Output, handlers: List<CommandHandler>) {
     private val handlers = CommandHandlers(handlers)

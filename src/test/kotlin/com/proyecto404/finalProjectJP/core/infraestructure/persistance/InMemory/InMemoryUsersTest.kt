@@ -1,7 +1,7 @@
-package com.proyecto404.finalProjectJP.infraestructure.persistance.InMemory
+package com.proyecto404.finalProjectJP.core.infraestructure.persistance.InMemory
 
 import com.proyecto404.finalProjectJP.core.domain.User
-import com.proyecto404.finalProjectJP.core.inMemory.InMemoryUsers
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

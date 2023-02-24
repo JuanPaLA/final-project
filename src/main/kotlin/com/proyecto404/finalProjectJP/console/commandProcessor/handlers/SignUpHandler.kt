@@ -7,7 +7,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
 import com.proyecto404.finalProjectJP.core.Core
-import com.proyecto404.finalProjectJP.core.domain.useCases.SignUp
+import com.proyecto404.finalProjectJP.core.useCases.SignUp
 
 class SignUpHandler(private val output: Output, private val core: Core) : CommandHandler {
     override val name = "signup"

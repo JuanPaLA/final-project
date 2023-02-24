@@ -1,11 +1,10 @@
-package com.proyecto404.finalProjectJP.domain.useCases
+package com.proyecto404.finalProjectJP.core.useCases
 import org.assertj.core.api.Assertions.assertThat
 
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.Users
-import com.proyecto404.finalProjectJP.core.domain.useCases.SignUp
-import com.proyecto404.finalProjectJP.core.domain.useCases.SignUp.Request
-import com.proyecto404.finalProjectJP.core.domain.useCases.SignUp.Response
+import com.proyecto404.finalProjectJP.core.useCases.SignUp.Request
+import com.proyecto404.finalProjectJP.core.useCases.SignUp.Response
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

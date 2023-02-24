@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.core.domain.useCases
+package com.proyecto404.finalProjectJP.core.useCases
 
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.Users

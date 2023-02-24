@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.core.domain.useCases
+package com.proyecto404.finalProjectJP.core.useCases
 
 class Login(){
     fun exec(request: Request): Response {

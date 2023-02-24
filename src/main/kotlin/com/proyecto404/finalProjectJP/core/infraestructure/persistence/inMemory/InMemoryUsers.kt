@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.core.inMemory
+package com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory
 
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.Users

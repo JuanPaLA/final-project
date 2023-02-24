@@ -3,9 +3,9 @@ package com.proyecto404.finalProjectJP.console.handlers
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.LoginHandler
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
-import com.proyecto404.finalProjectJP.core.domain.useCases.Login
-import com.proyecto404.finalProjectJP.core.domain.useCases.Login.Request
-import com.proyecto404.finalProjectJP.core.domain.useCases.Login.Response
+import com.proyecto404.finalProjectJP.core.useCases.Login
+import com.proyecto404.finalProjectJP.core.useCases.Login.Request
+import com.proyecto404.finalProjectJP.core.useCases.Login.Response
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

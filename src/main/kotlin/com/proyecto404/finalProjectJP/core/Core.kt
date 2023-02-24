@@ -1,7 +1,7 @@
 package com.proyecto404.finalProjectJP.core
 
-import com.proyecto404.finalProjectJP.core.domain.useCases.SignUp
-import com.proyecto404.finalProjectJP.core.inMemory.InMemoryUsers
+import com.proyecto404.finalProjectJP.core.useCases.SignUp
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 
 class Core {
     private val users = InMemoryUsers()

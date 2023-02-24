@@ -3,8 +3,8 @@ package com.proyecto404.finalProjectJP.console.commandProcessor.handlers
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
-import com.proyecto404.finalProjectJP.core.domain.useCases.Login
-import com.proyecto404.finalProjectJP.core.domain.useCases.Login.Request
+import com.proyecto404.finalProjectJP.core.useCases.Login
+import com.proyecto404.finalProjectJP.core.useCases.Login.Request
 
 class LoginHandler(override val name: String, private val output: Output, private val useCase: Login): CommandHandler {
     override fun execute(command: Command) {
