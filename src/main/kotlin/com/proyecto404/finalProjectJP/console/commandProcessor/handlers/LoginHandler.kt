@@ -1,25 +1,49 @@
 package com.proyecto404.finalProjectJP.console.commandProcessor.handlers
 
+import com.proyecto404.finalProjectJP.console.InvalidLoginCredentialsError
+import com.proyecto404.finalProjectJP.console.InvalidSignUpError
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
+import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.useCases.Login
 import com.proyecto404.finalProjectJP.core.useCases.Login.Request
 
-class LoginHandler(override val name: String, private val output: Output, private val useCase: Login): CommandHandler {
+class LoginHandler(private val output: Output, private val core: Core): CommandHandler {
+    override val name = "login"
+    private val ARGS_MIN_LENGTH = 4
+
     override fun execute(command: Command) {
-        val response = useCase.exec(Request(command.args[0], command.args[1]))
-        printCommand(command.args)
-        if (response.isLogged) {
-            output.println("Logged in as ${command.args[0]}!")
-        } else {
-            output.println("ERROR: Invalid credentials for ${command.args[0]}")
-        }
+        val userName = command.args[0]
+        val password = command.args[1]
+        if (isEmpty(userName)) return
+        if (isInvalid(userName)) return
+        if (isLongEnough(userName)) return
+        if (isLongEnough(password)) return
+        core.login().exec(Request(userName, password))
     }
 
-    private fun printCommand(arguments: List<String>) {
-        output.print(name)
-        if (arguments.isNotEmpty()) output.print(" " + arguments.joinToString(" "))
-        output.print("\n")
+    private fun isEmpty(userName: String): Boolean {
+        if (userName.isEmpty()) {
+            output.println("ERROR: username and password must be at least 4 characters long")
+            return true
+        }
+        return false
+    }
+
+    private fun isLongEnough(userName: String): Boolean {
+        if (userName.length < ARGS_MIN_LENGTH) {
+            output.println("ERROR: username and password must be at least 4 characters long")
+            return true
+        }
+        return false
+    }
+
+    private fun isInvalid(userName: String): Boolean {
+        if (userName.first().toString() != "@") {
+            output.println("ERROR: username must start with @")
+            return true
+        }
+        return false
     }
 }

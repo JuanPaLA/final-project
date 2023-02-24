@@ -1,54 +1,81 @@
 package com.proyecto404.finalProjectJP.console.handlers
 
+import com.proyecto404.finalProjectJP.console.InvalidLoginCredentialsError
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.LoginHandler
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
+import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.useCases.Login
 import com.proyecto404.finalProjectJP.core.useCases.Login.Request
-import com.proyecto404.finalProjectJP.core.useCases.Login.Response
+import io.mockk.Called
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
+import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 
 class LoginHandlerTest {
     @Test
-    fun `valid request`() {
-        handler.execute(validCommand)
+    fun `do signup with given username and password`() {
+        handler.execute(Command("login", listOf("@alice", "1234")))
 
         verify {
-            useCase.exec(Request(validCommand.args[0], validCommand.args[1]))
+            login.exec(Request("@alice", "1234"))
         }
     }
 
     @Test
-    fun `valid response`() {
-        every { useCase.exec(Request(validCommand.args[0],validCommand.args[1])) } returns Response(true)
+    fun `login fails if username is empty`() {
+        handler.execute(Command("login", listOf("", "1234")))
 
-        handler.execute(validCommand)
-
-        assertThat(output.lines).containsSequence(
-            "login @alice 1234",
-            "Logged in as @alice!",
-        )
+        assertThat(output.lines).endsWith("ERROR: username and password must be at least 4 characters long")
+        verify { login wasNot Called }
     }
 
     @Test
-    fun `invalid request`() {
-        every { useCase.exec(any()) } returns Response(false)
+    fun `login fails if password is empty`() {
+        handler.execute(Command("login", listOf("@alice", "")))
 
-        handler.execute(invalidCommand)
+        assertThat(output.lines).endsWith("ERROR: username and password must be at least 4 characters long")
+        verify { login wasNot Called }
+    }
 
-        assertThat(output.lines).containsSequence(
-            "login ${invalidCommand.args[0]} ${invalidCommand.args[1]}",
-            "ERROR: Invalid credentials for ${invalidCommand.args[0]}"
-        )
+    @Test
+    fun `login fails if username not start with @`() {
+        handler.execute(Command("login", listOf("alice", "1234")))
+
+        assertThat(output.lines).endsWith("ERROR: username must start with @")
+        verify { login wasNot Called }
+    }
+
+    @Test
+    fun `login fails if username is not at least 4 characters long`() {
+        handler.execute(Command("login", listOf("@a", "1234")))
+
+        assertThat(output.lines).endsWith("ERROR: username and password must be at least 4 characters long")
+        verify { login wasNot Called }
+    }
+
+    @Test
+    fun `login fails if password is not at least 4 characters long`() {
+        handler.execute(Command("login", listOf("@alice", "123")))
+
+        assertThat(output.lines).endsWith("ERROR: username and password must be at least 4 characters long")
+        verify { login wasNot Called }
+    }
+
+    @BeforeEach
+    fun setup() {
+        every { core.login() } returns login
     }
 
     private val output = FakeOutput()
-    private val validCommand = Command("login", listOf("@alice", "1234"))
-    private val invalidCommand = Command("login", listOf("@alice", ""))
-    private val useCase = mockk<Login>(relaxed = true)
-    private val handler = LoginHandler("login", output, useCase)
+    private val login = mockk<Login>(relaxed = true)
+    private val core = mockk<Core>(relaxed = true)
+    private val handler = LoginHandler(output, core)
 }

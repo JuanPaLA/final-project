@@ -1,39 +1,67 @@
 package com.proyecto404.finalProjectJP.core.useCases
-import org.assertj.core.api.Assertions.assertThat
 
 import com.proyecto404.finalProjectJP.core.domain.User
-import com.proyecto404.finalProjectJP.core.domain.Users
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 import com.proyecto404.finalProjectJP.core.useCases.SignUp.Request
-import com.proyecto404.finalProjectJP.core.useCases.SignUp.Response
-import io.mockk.every
-import io.mockk.mockk
-import io.mockk.verify
+import com.proyecto404.finalProjectJP.core.useCases.exceptions.RepeatedUsernameError
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class SignUpTest {
     @Test
-    fun `valid signup returns successful response`() {
-        val response = signup.exec(Request("@alice", "1234"))
-
-        assertThat(response).isEqualTo(Response(true, "successful signup"))
-    }
-
-    @Test
-    fun `signup adds a new user to repository`() {
+    fun `signup creates new user`() {
         signup.exec(Request("@alice", "1234"))
 
-        verify { users.add(User("@alice", "1234")) }
+        assertThat(users.get("@alice")).isEqualTo(User("@alice", "1234"))
     }
 
     @Test
-    fun `signup cannot add repeated usernames`() {
-        every { users.get("@alice") } returns User("@alice", "1234")
+    fun `usernames must be unique`() {
+        signup.exec(Request("@alice", "1234"))
 
-        val response = signup.exec(Request("@alice", "1234"))
-
-        assertThat(response).isEqualTo(Response(false, "ERROR: User @alice already exists"))
+        assertThrows<RepeatedUsernameError> {
+            signup.exec(Request("@alice", "1234"))
+        }
     }
 
-    private val users = mockk<Users>(relaxed = true)
+    @Test
+    fun `username must not be empty`() {
+        assertThrows<InvalidUsernameError> {
+            signup.exec(Request("", "1234"))
+        }
+    }
+
+    @Test
+    fun `usernames start with @`() {
+        assertThrows<InvalidUsernameError> {
+            signup.exec(Request("alice", "1234"))
+        }
+    }
+
+    @Test
+    fun `usernames have at least 4 characters long`() {
+        assertThrows<InvalidUsernameError> {
+            signup.exec(Request("@al", "1234"))
+        }
+    }
+
+    @Test
+    fun `password must not be empty`() {
+        assertThrows<InvalidPasswordError> {
+            signup.exec(Request("@alice", ""))
+        }
+    }
+
+    @Test
+    fun `password have at least 4 characters long`() {
+        assertThrows<InvalidPasswordError> {
+            signup.exec(Request("@alice", "123"))
+        }
+    }
+
+
+
+    private val users = InMemoryUsers()
     private val signup = SignUp(users)
 }
