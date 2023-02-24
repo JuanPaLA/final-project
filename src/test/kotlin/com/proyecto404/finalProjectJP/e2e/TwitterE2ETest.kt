@@ -9,15 +9,15 @@ import org.junit.jupiter.api.Test
 class TwitterE2ETest {
     @Test
     fun login() {
-        input.willRead("signup @alice 777")
-        input.willRead("login @alice 777")
+        input.willRead("signup @alice 1234")
+        input.willRead("login @alice 1234")
         input.willRead("exit")
 
         console.run()
 
         assertThat(output.lines).containsExactly(
-            "> signup @alice 777",
-            "> login @alice 777",
+            "> signup @alice 1234",
+            "> login @alice 1234",
             "Logged in as @alice",
             "@alice> exit",
             "bye bye",

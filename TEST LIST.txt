@@ -1,1 +1,10 @@
-- pass command's arguments to handlers
+(design use case)
+- valid prompt
+- valid signup
+- invalid signup
+.empty password
+.wrong format
+.empty username
+.name with no @
+- repeated user
+

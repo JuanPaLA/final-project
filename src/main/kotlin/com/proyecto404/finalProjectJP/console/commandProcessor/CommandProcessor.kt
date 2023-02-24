@@ -2,8 +2,10 @@
 
 package com.proyecto404.finalProjectJP.console.commandProcessor
 
+import com.proyecto404.finalProjectJP.console.InvalidSignUpError
 import com.proyecto404.finalProjectJP.console.io.Input
 import com.proyecto404.finalProjectJP.console.io.Output
+import com.proyecto404.finalProjectJP.core.inMemory.UserNotFoundError
 
 class CommandProcessor(private val input: Input, private val output: Output, handlers: List<CommandHandler>) {
     private val handlers = CommandHandlers(handlers)
@@ -29,9 +31,13 @@ class CommandProcessor(private val input: Input, private val output: Output, han
 
     private fun execute(command: Command) {
         try {
-            handlers.get(command.name).execute(command.args)
-        } catch(e: CommandNotFoundError) {
+            handlers.get(command).execute(command)
+        } catch (e: CommandNotFoundError) {
             output.println("ERROR: Invalid command ${command.name}")
+        } catch (e: InvalidSignUpError) {
+            output.println("ERROR: Invalid ${command.name}")
+        } catch (e: UserNotFoundError) {
+
         }
     }
 
@@ -39,4 +45,3 @@ class CommandProcessor(private val input: Input, private val output: Output, han
         output.println("bye bye")
     }
 }
-

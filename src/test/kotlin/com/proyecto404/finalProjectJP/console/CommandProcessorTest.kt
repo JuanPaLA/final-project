@@ -1,5 +1,6 @@
 package com.proyecto404.finalProjectJP.console
 
+import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandProcessor
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
@@ -81,9 +82,9 @@ class CommandProcessorTest {
     private val processor by lazy { CommandProcessor(input, output, handlers) }
 
     class CommandPrinterHandler(override val name: String, private val output: Output): CommandHandler {
-        override fun execute(arguments: List<String>) {
-            output.print(name)
-            if (arguments.isNotEmpty()) output.print(" " + arguments.joinToString(" "))
+        override fun execute(command: Command) {
+            output.print(command.name)
+            if (command.args.isNotEmpty()) output.print(" " + command.args.joinToString(" "))
             output.print("\n")
         }
     }
