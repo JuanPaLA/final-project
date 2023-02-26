@@ -1,6 +1,5 @@
 package com.proyecto404.finalProjectJP.console.handlers
 
-import com.proyecto404.finalProjectJP.console.InvalidLoginCredentialsError
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.LoginHandler
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
@@ -11,13 +10,9 @@ import io.mockk.Called
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
 
 class LoginHandlerTest {
     @Test

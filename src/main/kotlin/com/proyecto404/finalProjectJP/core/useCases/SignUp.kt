@@ -3,6 +3,7 @@ package com.proyecto404.finalProjectJP.core.useCases
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.Users
 import com.proyecto404.finalProjectJP.core.domain.services.CredentialsValidationService
+import com.proyecto404.finalProjectJP.core.useCases.exceptions.RepeatedUsernameError
 
 class SignUp(private val users: Users) {
     fun exec(request: Request) {

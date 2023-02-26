@@ -1,12 +1,11 @@
+@file:Suppress("PrivatePropertyName")
+
 package com.proyecto404.finalProjectJP.console.commandProcessor.handlers
 
-import com.proyecto404.finalProjectJP.console.InvalidLoginCredentialsError
-import com.proyecto404.finalProjectJP.console.InvalidSignUpError
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
 import com.proyecto404.finalProjectJP.core.Core
-import com.proyecto404.finalProjectJP.core.useCases.Login
 import com.proyecto404.finalProjectJP.core.useCases.Login.Request
 
 class LoginHandler(private val output: Output, private val core: Core): CommandHandler {

@@ -7,6 +7,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.useCases.SignUp
+import com.proyecto404.finalProjectJP.core.useCases.exceptions.RepeatedUsernameError
 
 class SignUpHandler(private val output: Output, private val core: Core) : CommandHandler {
     override val name = "signup"
@@ -19,7 +20,11 @@ class SignUpHandler(private val output: Output, private val core: Core) : Comman
         if (isInvalid(userName)) return
         if (isLongEnough(userName)) return
         if (isLongEnough(password)) return
-        core.signup().exec(SignUp.Request(userName, password))
+        try {
+            core.signup().exec(SignUp.Request(userName, password))
+        } catch (e: RepeatedUsernameError) {
+            output.println("ERROR: user $userName already exists")
+        }
     }
 
     private fun isLongEnough(userName: String): Boolean {
