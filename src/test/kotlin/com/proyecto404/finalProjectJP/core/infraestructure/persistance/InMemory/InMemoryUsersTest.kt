@@ -1,9 +1,9 @@
 package com.proyecto404.finalProjectJP.core.infraestructure.persistance.InMemory
 
 import com.proyecto404.finalProjectJP.core.domain.User
+import com.proyecto404.finalProjectJP.core.domain.exceptions.RepeatedUsernameError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.UserNotFoundError
-import com.proyecto404.finalProjectJP.core.useCases.exceptions.RepeatedUsernameError
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

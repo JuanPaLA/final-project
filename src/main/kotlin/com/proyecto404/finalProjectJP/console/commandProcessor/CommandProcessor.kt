@@ -2,12 +2,14 @@
 
 package com.proyecto404.finalProjectJP.console.commandProcessor
 
-import com.proyecto404.finalProjectJP.console.InvalidSignUpError
+import com.proyecto404.finalProjectJP.console.PromptPrinter
+import com.proyecto404.finalProjectJP.console.commandProcessor.exceptions.CommandNotFoundError
 import com.proyecto404.finalProjectJP.console.io.Input
 import com.proyecto404.finalProjectJP.console.io.Output
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.UserNotFoundError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidSignUpError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
 
-class CommandProcessor(private val input: Input, private val output: Output, handlers: List<CommandHandler>) {
+class CommandProcessor(private val input: Input, private val output: Output, handlers: List<CommandHandler>, private val promptPrinter: PromptPrinter) {
     private val handlers = CommandHandlers(handlers)
     private val EXIT_COMMAND = "exit"
 
@@ -26,7 +28,7 @@ class CommandProcessor(private val input: Input, private val output: Output, han
     }
 
     private fun printPrompt() {
-        output.print("> ")
+        output.print(promptPrinter.prompt())
     }
 
     private fun execute(command: Command) {

@@ -2,7 +2,8 @@ package com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory
 
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.Users
-import com.proyecto404.finalProjectJP.core.useCases.exceptions.RepeatedUsernameError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.RepeatedUsernameError
 
 class InMemoryUsers: Users {
     private val users: MutableList<User> = mutableListOf()

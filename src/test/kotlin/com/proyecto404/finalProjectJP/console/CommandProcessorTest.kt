@@ -6,6 +6,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.CommandProcessor
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
 import com.proyecto404.finalProjectJP.console.io.InputStub
 import com.proyecto404.finalProjectJP.console.io.Output
+import com.proyecto404.finalProjectJP.console.session.Session
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
@@ -79,7 +80,9 @@ class CommandProcessorTest {
     private val output = FakeOutput()
     private val input = InputStub("", output)
     private val handlers = mutableListOf<CommandHandler>()
-    private val processor by lazy { CommandProcessor(input, output, handlers) }
+    private val session = Session()
+    private val promptPrinter = SessionPrinter(session)
+    private val processor by lazy { CommandProcessor(input, output, handlers, promptPrinter) }
 
     class CommandPrinterHandler(override val name: String, private val output: Output): CommandHandler {
         override fun execute(command: Command) {

@@ -1,6 +1,8 @@
 package com.proyecto404.finalProjectJP.core.domain
 
 class User (val name: String, val password: String){
+    val tokens: MutableList<SessionToken> = mutableListOf()
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

@@ -2,13 +2,15 @@
 
 package com.proyecto404.finalProjectJP.console.commandProcessor.handlers
 
+import com.proyecto404.finalProjectJP.console.session.Session
+import com.proyecto404.finalProjectJP.console.session.UserSession
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.useCases.Login.Request
 
-class LoginHandler(private val output: Output, private val core: Core): CommandHandler {
+class LoginHandler(private val output: Output, private val core: Core, private var session: Session): CommandHandler {
     override val name = "login"
     private val ARGS_MIN_LENGTH = 4
 
@@ -19,7 +21,13 @@ class LoginHandler(private val output: Output, private val core: Core): CommandH
         if (isInvalid(userName)) return
         if (isLongEnough(userName)) return
         if (isLongEnough(password)) return
-        core.login().exec(Request(userName, password))
+        val response = core.login().exec(Request(userName, password))
+        if (response.sessionToken != null) {
+            session.authenticate(UserSession(userName, response.sessionToken))
+            output.println("Logged in as ${userName}!")
+        } else {
+            output.println("ERROR: Invalid credentials for $userName")
+        }
     }
 
     private fun isEmpty(userName: String): Boolean {

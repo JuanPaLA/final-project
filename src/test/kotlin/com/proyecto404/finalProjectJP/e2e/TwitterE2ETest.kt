@@ -1,8 +1,8 @@
 package com.proyecto404.finalProjectJP.e2e
 
 import com.proyecto404.finalProjectJP.console.ConsoleApp
-import com.proyecto404.finalProjectJP.console.io.InputStub
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
+import com.proyecto404.finalProjectJP.console.io.InputStub
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
@@ -18,7 +18,7 @@ class TwitterE2ETest {
         assertThat(output.lines).containsExactly(
             "> signup @alice 1234",
             "> login @alice 1234",
-            "Logged in as @alice",
+            "Logged in as @alice!",
             "@alice> exit",
             "bye bye",
         )
