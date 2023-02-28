@@ -8,9 +8,10 @@ class Login(private val users: Users, private val authService: AuthService) {
 
     fun exec(request: Request): Response {
         val user = users.get(request.userName)
-        return if (user.password == request.password){
+        return if (authService.isValidCredentialRequest(request, user)) {
             val sessionToken = authService.generateSessionToken(user)
             user.tokens.add(sessionToken)
+            users.update(user)
             Response(sessionToken)
         } else {
             Response(null)

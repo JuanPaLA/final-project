@@ -1,17 +1,24 @@
 package com.proyecto404.finalProjectJP.console.session
 
-abstract class SessionType {
-    abstract fun isAuthenticated(): Boolean
+class SessionState {
+    var identity: Session = Anonymous()
 
-    abstract fun getSession(): UserSession
+    fun authenticate(user: User) {
+        this.identity = user
+    }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
+
+        other as SessionState
+
+        if (identity != other.identity) return false
+
         return true
     }
 
     override fun hashCode(): Int {
-        return javaClass.hashCode()
+        return identity.hashCode()
     }
 }

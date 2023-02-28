@@ -5,15 +5,15 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.LoginHan
 import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.SignUpHandler
 import com.proyecto404.finalProjectJP.console.io.Input
 import com.proyecto404.finalProjectJP.console.io.Output
-import com.proyecto404.finalProjectJP.console.session.Session
+import com.proyecto404.finalProjectJP.console.session.SessionState
 import com.proyecto404.finalProjectJP.core.Core
 
 class ConsoleApp(input: Input, output: Output) {
-    var session = Session()
-    private val promptSessionPrinter = SessionPrinter(session)
+    var session = SessionState()
+    private val prompt = SessionPrinter(session)
     private val core = Core()
     private val handlers = listOf(SignUpHandler(output, core), LoginHandler(output, core, session))
-    private val processor = CommandProcessor(input, output, handlers, promptSessionPrinter)
+    private val processor = CommandProcessor(input, output, handlers, prompt)
 
     fun run() {
         processor.run()

@@ -1,8 +1,7 @@
 package com.proyecto404.finalProjectJP.console.handlers
 
-import com.proyecto404.finalProjectJP.console.session.AuthSession
 import com.proyecto404.finalProjectJP.console.ConsoleApp
-import com.proyecto404.finalProjectJP.console.session.UserSession
+import com.proyecto404.finalProjectJP.console.session.User
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.LoginHandler
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
@@ -30,6 +29,15 @@ class LoginHandlerTest {
     }
 
     @Test
+    fun `nonexistent users can not login`() {
+        every { login.exec(any()) } returns Login.Response(null)
+
+        handler.execute(Command("login", listOf("@bob", "1111")))
+
+        assertThat(output.lines).containsSequence("ERROR: Invalid credentials for @bob")
+    }
+
+    @Test
     fun `login should return confirmation message when successful`() {
         every { login.exec(any()) } returns Login.Response(SessionToken("aToken"))
 
@@ -44,7 +52,7 @@ class LoginHandlerTest {
 
         handler.execute(Command("login", listOf("@alice", "1234")))
 
-        assertThat(console.session.state).isEqualTo(AuthSession(UserSession("@alice", SessionToken("aToken"))))
+        assertThat(console.session.identity).isEqualTo(User("@alice", SessionToken("aToken")))
     }
 
     @Test
