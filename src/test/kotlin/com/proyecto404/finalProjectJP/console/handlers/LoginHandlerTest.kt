@@ -52,7 +52,7 @@ class LoginHandlerTest {
 
         handler.execute(Command("login", listOf("@alice", "1234")))
 
-        assertThat(console.session.identity).isEqualTo(User("@alice", SessionToken("aToken")))
+        assertThat(console.session).isEqualTo(User("@alice", SessionToken("aToken")))
     }
 
     @Test

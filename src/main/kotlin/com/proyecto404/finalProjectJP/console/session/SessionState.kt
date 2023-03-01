@@ -1,23 +1,29 @@
 package com.proyecto404.finalProjectJP.console.session
 
-open class SessionState {
+class SessionState {
     var identity: Session = Anonymous()
 
     fun authenticate(user: User) {
         this.identity = user
     }
 
+    fun isAuthenticated() = identity is User
+
     fun logout() {
         this.identity = Anonymous()
     }
 
+    fun getSession(): User {
+        if (isAuthenticated()) return identity as User
+        else throw NotLoggedInError
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
 
-        other as SessionState
+        other as Session
 
-        if (identity != other.identity) return false
+        if (identity != other) return false
 
         return true
     }

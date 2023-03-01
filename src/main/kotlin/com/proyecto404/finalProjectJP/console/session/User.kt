@@ -3,9 +3,6 @@ package com.proyecto404.finalProjectJP.console.session
 import com.proyecto404.finalProjectJP.core.domain.SessionToken
 
 class User(val username: String, val token: SessionToken): Session() {
-    override fun isAuthenticated() = true
-
-    override fun getSession() = this
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
