@@ -24,6 +24,26 @@ class TwitterE2ETest {
         )
     }
 
+    @Test
+    fun logout() {
+        input.willRead("signup @alice 1234")
+        input.willRead("login @alice 1234")
+        input.willRead("logout")
+        input.willRead("exit")
+
+        console.run()
+
+        assertThat(output.lines).containsExactly(
+            "> signup @alice 1234",
+            "> login @alice 1234",
+            "Logged in as @alice!",
+            "@alice> logout",
+            "Logged out!",
+            "> exit",
+            "bye bye",
+        )
+    }
+
     private val output = FakeOutput()
     private val input = InputStub("", output)
     private val console = ConsoleApp(input, output)

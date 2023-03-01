@@ -1,10 +1,14 @@
 package com.proyecto404.finalProjectJP.console.session
 
-class SessionState {
+open class SessionState {
     var identity: Session = Anonymous()
 
     fun authenticate(user: User) {
         this.identity = user
+    }
+
+    fun logout() {
+        this.identity = Anonymous()
     }
 
     override fun equals(other: Any?): Boolean {
