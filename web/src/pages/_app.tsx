@@ -1,6 +1,9 @@
-import '@/src/ui/layout/styles/globals.css'
+import '@/ui/layout/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { defaultWebAppConfig, WebApp } from '@/ui/WebApp'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const application = new WebApp(defaultWebAppConfig())
+
+const Application = ({ Component, pageProps }: AppProps) => application.render(Component, pageProps)
+
+export default Application

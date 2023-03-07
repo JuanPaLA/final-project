@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="" />
+    <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/core/Core.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/core/model/UserService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/core/useCases/Signup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/HomePresenter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/test/ui/screens/HomePresenter.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.pnp.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.pnp.loader.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/layout/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/HomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +80,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -77,27 +102,33 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/404/Katas/final_project_jp/web",
+    "last_opened_file_path": "C:/404/katas/social-network-jp",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/404/katas/social-network-jp/web/node_modules/jest",
     "nodejs_package_manager_path": "yarn",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "C:\\404\\katas\\social-network-jp\\web\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\404\katas\social-network-jp\web\src\ui\screens\Home" />
       <recent name="C:\404\Katas\final_project_jp\web\src\ui\layout" />
       <recent name="C:\404\Katas\final_project_jp\web\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.api [test]">
+  <component name="RunManager" selected="Jest.HomePresenter.test.ts">
     <configuration name="api [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -140,8 +171,47 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Fails" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/web" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/web/test/sample.test.ts" />
+      <test-names>
+        <test-name value="Fails" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="HomePresenter.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/web" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/web/test/ui/screens/HomePresenter.test.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="counter starts in 0" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/web" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/web/test/ui/screens/HomePresenter.test.ts" />
+      <test-names>
+        <test-name value="counter starts in 0" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.HomePresenter.test.ts" />
+        <item itemvalue="Jest.counter starts in 0" />
+        <item itemvalue="Jest.Fails" />
         <item itemvalue="Gradle.api [test]" />
         <item itemvalue="Gradle.api [build]" />
       </list>
@@ -156,10 +226,15 @@
       <option name="presentableId" value="Default" />
       <updated>1678218814722</updated>
       <workItem from="1678218815936" duration="1912000" />
+      <workItem from="1678220815849" duration="4438000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
