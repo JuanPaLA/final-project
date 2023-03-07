@@ -1,7 +1,19 @@
 package com.proyecto404.finalProjectJP.core.domain
 
+import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
+import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
+
 class User (val name: String, val password: String){
-    val tokens: MutableList<SessionToken> = mutableListOf()
+    private val tokens: MutableList<SessionToken> = mutableListOf()
+
+    fun addToken(token: SessionToken) {
+        tokens.add(token)
+    }
+
+    fun token(): SessionToken {
+        if (tokens.isEmpty()) throw UserNotAuthenticatedError()
+        return tokens.last()
+    }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

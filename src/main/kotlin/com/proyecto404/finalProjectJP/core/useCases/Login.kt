@@ -1,6 +1,6 @@
 package com.proyecto404.finalProjectJP.core.useCases
 
-import com.proyecto404.finalProjectJP.core.domain.SessionToken
+import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.domain.Users
 import com.proyecto404.finalProjectJP.core.domain.services.AuthService
 
@@ -10,7 +10,7 @@ class Login(private val users: Users, private val authService: AuthService) {
         val user = users.get(request.userName)
         return if (authService.isValidCredentialRequest(request, user)) {
             val sessionToken = authService.generateSessionToken(user)
-            user.tokens.add(sessionToken)
+            user.addToken(sessionToken)
             users.update(user)
             Response(sessionToken)
         } else {

@@ -1,8 +1,8 @@
 package com.proyecto404.finalProjectJP.core.useCases
 
-import com.proyecto404.finalProjectJP.core.domain.SessionToken
+import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.domain.User
-import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidPasswordError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
 import com.proyecto404.finalProjectJP.core.domain.services.AuthService
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
@@ -24,7 +24,7 @@ class LoginTest {
         login.exec(Login.Request("@alice", "1234"))
 
         val alice = users.get("@alice")
-        assertThat(alice.tokens.first()).isEqualTo(SessionToken("aToken"))
+        assertThat(alice.token()).isEqualTo(SessionToken("aToken"))
     }
 
     @Test
@@ -38,8 +38,9 @@ class LoginTest {
     fun `user cannot login with invalid username`() {
         signup.exec(Request("@alice", "1234"))
 
-        assertThrows<UserNotFoundError> { login.exec(Login.Request("alice", "1234")) }
-        assertThat(users.get("@alice").tokens).isEmpty()
+        assertThrows<UserNotFoundError> {
+            login.exec(Login.Request("alice", "1234"))
+        }
     }
 
     @Test
@@ -50,7 +51,9 @@ class LoginTest {
         val response = login.exec(Login.Request("@alice", "1111"))
 
         assertThat(response).isEqualTo(Response(null))
-        assertThat(users.get("@alice").tokens).isEmpty()
+        assertThrows<UserNotAuthenticatedError> {
+            users.get("@alice").token()
+        }
     }
 
     @Test

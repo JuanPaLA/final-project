@@ -2,13 +2,13 @@
 
 package com.proyecto404.finalProjectJP.core.domain.services
 
-import com.proyecto404.finalProjectJP.core.domain.SessionToken
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidPasswordError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidUsernameError
+import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
 import com.proyecto404.finalProjectJP.core.useCases.Login.*
 
-class AuthService() {
+class AuthService {
     private val ARGS_MIN_LENGTH = 4
 
     fun checkCredentials(user: User) {
@@ -25,4 +25,8 @@ class AuthService() {
         return User(request.userName, request.password) == user
     }
 
+    fun validateToken(token: SessionToken, user: User): Boolean {
+        if (token != user.token()) throw UserNotAuthenticatedError()
+        else return true
+    }
 }

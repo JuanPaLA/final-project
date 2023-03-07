@@ -6,6 +6,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.CommandProcessor
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
 import com.proyecto404.finalProjectJP.console.io.InputStub
 import com.proyecto404.finalProjectJP.console.io.Output
+import com.proyecto404.finalProjectJP.console.session.SessionPrinter
 import com.proyecto404.finalProjectJP.console.session.SessionState
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

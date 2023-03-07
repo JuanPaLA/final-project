@@ -14,12 +14,20 @@ class SignUpHandler(private val output: Output, private val core: Core) : Comman
     private val ARGS_MIN_LENGTH = 4
 
     override fun execute(command: Command) {
-        val userName = command.args[0]
-        val password = command.args[1]
-        if (isEmpty(userName)) return
-        if (isInvalid(userName)) return
-        if (isLongEnough(userName)) return
-        if (isLongEnough(password)) return
+        try {
+            val userName = command.args[0]
+            val password = command.args[1]
+            if (isEmpty(userName)) return
+            if (isInvalid(userName)) return
+            if (hasInvalidLength(userName)) return
+            if (hasInvalidLength(password)) return
+            tryRequest(userName, password)
+        } catch (e: IndexOutOfBoundsException) {
+            output.println("ERROR: invalid command")
+        }
+    }
+
+    private fun tryRequest(userName: String, password: String) {
         try {
             core.signup().exec(SignUp.Request(userName, password))
         } catch (e: RepeatedUsernameError) {
@@ -27,7 +35,7 @@ class SignUpHandler(private val output: Output, private val core: Core) : Comman
         }
     }
 
-    private fun isLongEnough(userName: String): Boolean {
+    private fun hasInvalidLength(userName: String): Boolean {
         if (userName.length < ARGS_MIN_LENGTH) {
             output.println("ERROR: username and password must be at least 4 characters long")
             return true

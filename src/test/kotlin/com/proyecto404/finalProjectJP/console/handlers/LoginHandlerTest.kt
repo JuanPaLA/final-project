@@ -7,7 +7,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.handlers.LoginHan
 import com.proyecto404.finalProjectJP.console.io.FakeOutput
 import com.proyecto404.finalProjectJP.console.io.InputStub
 import com.proyecto404.finalProjectJP.core.Core
-import com.proyecto404.finalProjectJP.core.domain.SessionToken
+import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.useCases.Login
 import com.proyecto404.finalProjectJP.core.useCases.Login.Request
 import io.mockk.Called

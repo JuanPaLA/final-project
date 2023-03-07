@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.console
+package com.proyecto404.finalProjectJP.console.session
 
 import com.proyecto404.finalProjectJP.console.commandProcessor.Prompt
 import com.proyecto404.finalProjectJP.console.session.SessionState

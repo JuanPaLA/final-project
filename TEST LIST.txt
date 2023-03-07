@@ -1,3 +1,8 @@
-LOGIN
+FOLLOWINGTEST
+- login
+
+FOLLOWTEST
+- not repeated user
+- existing user
 
 

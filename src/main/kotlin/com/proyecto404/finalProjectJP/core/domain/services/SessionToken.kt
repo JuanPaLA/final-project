@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.core.domain
+package com.proyecto404.finalProjectJP.core.domain.services
 
 class SessionToken(private val token: String) {
     override fun toString(): String = token

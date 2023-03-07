@@ -1,5 +1,7 @@
 package com.proyecto404.finalProjectJP.console.session
 
+import com.proyecto404.finalProjectJP.console.session.exceptions.NotLoggedInError
+
 class SessionState {
     var identity: Session = Anonymous()
 

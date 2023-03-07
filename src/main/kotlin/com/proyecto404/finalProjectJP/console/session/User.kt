@@ -1,6 +1,6 @@
 package com.proyecto404.finalProjectJP.console.session
 
-import com.proyecto404.finalProjectJP.core.domain.SessionToken
+import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 
 class User(val username: String, val token: SessionToken): Session() {
 

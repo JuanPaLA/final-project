@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.console.handlers
+package com.proyecto404.finalProjectJP.console.commandProcessor.handlers
 
 import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
