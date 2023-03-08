@@ -1,3 +1,3 @@
-import { HomeScreen } from '@/ui/screens/Home/HomeScreen'
+import { SignUpScreen } from '@/ui/screens/Home/SignUpScreen'
 
-export default () => <HomeScreen />
+export default () => <SignUpScreen />

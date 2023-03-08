@@ -1,4 +1,5 @@
 import '@/ui/layout/styles/globals.css'
+
 import type { AppProps } from 'next/app'
 import { defaultWebAppConfig, WebApp } from '@/ui/WebApp'
 

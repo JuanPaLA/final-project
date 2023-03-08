@@ -4,7 +4,7 @@ import { AxiosHttpClient } from '@/core/infrastructure/http/axiosClient/AxiosHtt
 
 export class Core {
     private httpClient = new AxiosHttpClient('http://localhost:6060/')
-    private userService = new HttpUserService(this.httpClient)
+    protected userService = new HttpUserService(this.httpClient)
 
     signup() {
         return new Signup(this.userService)
