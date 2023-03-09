@@ -3,7 +3,6 @@ import { Router } from '@/ui/services/router/Router'
 import { Signup } from "@/core/useCases/Signup";
 import { anything, instance, mock, verify, when } from 'ts-mockito'
 import { expect } from "expect";
-import {sign} from "crypto";
 
 it('name and passwords starts empty', () => {
     presenter.start()

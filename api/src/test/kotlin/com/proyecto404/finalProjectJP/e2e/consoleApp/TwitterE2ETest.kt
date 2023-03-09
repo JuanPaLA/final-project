@@ -1,4 +1,4 @@
-package com.proyecto404.finalProjectJP.e2e
+package com.proyecto404.finalProjectJP.e2e.consoleApp
 
 import com.proyecto404.finalProjectJP.console.ConsoleApp
 import com.proyecto404.finalProjectJP.console.io.FakeOutput

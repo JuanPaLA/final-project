@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/ui/layout/styles/Globals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/test/common/ts-mockito-extensions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/test/core/useCases/Signup.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/Core.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/Core.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Home/HomePresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/SignUpPresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/SignUpScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/ui/screens/HomePresenter.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/TwitterE2ETest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/consoleApp/TwitterE2ETest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +64,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -113,81 +113,86 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\404\Katas\final_project_jp\web\test\common" />
       <recent name="C:\404\katas\social-network-jp\web\src\ui\screens\Home" />
       <recent name="C:\404\Katas\final_project_jp\web\src\ui\layout" />
       <recent name="C:\404\Katas\final_project_jp\web\src" />
     </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.proyecto404.finalProjectJP.e2e.consoleApp" />
+      <recent name="com.proyecto404.finalProjectJP.e2e.console" />
+    </key>
   </component>
-  <component name="RunManager" selected="Jest.SignUpPresenter.test.ts">
-    <configuration name="SignUpPresenter.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.signup sends name and password">
+    <configuration name="HttpUserService.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
       <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="signup build propper request" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <test-names>
-        <test-name value="" />
+        <test-name value="signup build propper request" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="do signup request with given username and password" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="signup returns a response object" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <test-names>
-        <test-name value="do signup request with given username and password" />
+        <test-name value="signup returns a response object" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="failed signup navigates to error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="signup returns a respose objetc" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <test-names>
-        <test-name value="failed signup navigates to error" />
+        <test-name value="signup returns a respose objetc" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="usernmame must be one single word" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="signup sends name and password" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <test-names>
-        <test-name value="usernmame must be one single word" />
+        <test-name value="signup sends name and password" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.SignUpPresenter.test.ts" />
-        <item itemvalue="Jest.usernmame must be one single word" />
-        <item itemvalue="Jest.failed signup navigates to error" />
-        <item itemvalue="Jest.do signup request with given username and password" />
-        <item itemvalue="Jest.Unnamed" />
+        <item itemvalue="Jest.signup sends name and password" />
+        <item itemvalue="Jest.signup returns a response object" />
+        <item itemvalue="Jest.HttpUserService.test.ts" />
+        <item itemvalue="Jest.signup returns a respose objetc" />
+        <item itemvalue="Jest.signup build propper request" />
       </list>
     </recent_temporary>
   </component>
