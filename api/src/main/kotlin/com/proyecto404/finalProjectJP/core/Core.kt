@@ -1,24 +1,26 @@
 package com.proyecto404.finalProjectJP.core
 
+import com.proyecto404.finalProjectJP.core.domain.Users
 import com.proyecto404.finalProjectJP.core.domain.services.AuthService
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryPosts
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRelationships
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 import com.proyecto404.finalProjectJP.core.useCases.*
 
-class Core {
-    private val users = InMemoryUsers()
+class Core(private val config: Configuration) {
     private val posts = InMemoryPosts()
     private val relationships = InMemoryRelationships()
     private val authService = AuthService()
 
-    fun signup() = SignUp(users)
-    fun login() = Login(users, authService)
-    fun post() = Post(posts, users, authService)
-    fun read() = Read(posts, users, authService)
-    fun follow() = Follow(relationships, users, authService)
-    fun wall() = Wall(posts, users, relationships, authService)
-    fun following() = Following(users, relationships, authService)
-    fun followers() = Followers(users, relationships, authService)
-    fun unfollow() = Unfollow(users, relationships, authService)
+    fun signup() = SignUp(config.users)
+    fun login() = Login(config.users, authService)
+    fun post() = Post(posts, config.users, authService)
+    fun read() = Read(posts, config.users, authService)
+    fun follow() = Follow(relationships, config.users, authService)
+    fun wall() = Wall(posts, config.users, relationships, authService)
+    fun following() = Following(config.users, relationships, authService)
+    fun followers() = Followers(config.users, relationships, authService)
+    fun unfollow() = Unfollow(config.users, relationships, authService)
+
+    data class Configuration(val users: Users)
 }

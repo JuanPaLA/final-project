@@ -4,13 +4,14 @@ import { useAppPresenter } from '@/ui/lib/presenters/useAppPresenter'
 import styled from 'styled-components'
 import { Container, StyledForm } from '@/ui/layout/styles/Globals.js'
 
-const signUpPresenter = (onChange, services: WebAppServices) => new SignUpPresenter(onChange, services.signup, services.router)
+const signUpPresenter = (onChange, services: WebAppServices) =>
+    new SignUpPresenter(onChange, services.signup, services.router)
 
 export const SignUpScreen = () => {
     const presenter = useAppPresenter(signUpPresenter)
     return (
         <Container>
-            <StyledForm onSubmit={() => presenter.doSignup()}>
+            <div>
                 <h1>Signup Form</h1>
                 <FormControl>
                     <label>Name:</label>
@@ -20,9 +21,9 @@ export const SignUpScreen = () => {
                     <label>Password:</label>
                     <input value={presenter.model.password} onChange={(e) => presenter.setPassword(e.target.value)} />
                 </FormControl>
-                <input type="submit" disabled={!presenter.isSignupEnabled()} value="SignUp"/>
-            </StyledForm>
-            <StyledAnchor href={"/login"}>
+                <input type="submit" value="SignUp"/>
+            </div>
+            <StyledAnchor href={"#"} onClick={() => presenter.doSignup()}>
                 Login
             </StyledAnchor>
         </Container>

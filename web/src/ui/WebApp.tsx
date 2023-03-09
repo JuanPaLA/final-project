@@ -26,14 +26,18 @@ export class WebApp {
 
 export interface WebAppConfig {
     router: Router,
-    signup: Signup
+    signup: Signup,
+    core: Core
 }
 
-export interface WebAppServices extends WebAppConfig {}
+export interface WebAppServices extends WebAppConfig {
+
+}
 
 export const defaultWebAppConfig = (): WebAppConfig => {
     return {
         router: new NextJsRouter(),
-        signup: new Signup(new HttpUserService(new AxiosHttpClient('http://localhost:6060/')))
+        signup: new Signup(new HttpUserService(new AxiosHttpClient('http://localhost:8080/'))),
+        core: new Core()
     }
 }

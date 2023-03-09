@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/common/ts-mockito-extensions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/core/useCases/Signup.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/HttpApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/httpMain.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/core/useCases/Login.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/LoginScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/LoginUpPresenter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/test/ui/screens/LoginPresenter.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/TwitterE2ETest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/consoleApp/TwitterE2ETest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/console/ConsoleApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/console/ConsoleApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/Core.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/Core.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/console/handlers/LogoutHandlerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/console/handlers/LogoutHandlerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/Core.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/Core.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/model/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/model/UserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Home/SignUpPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/SignUpPresenter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Home/SignUpScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/Home/SignUpScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +64,16 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="final_project_jp" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="final_project_jp" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -65,9 +85,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
         <option value="Kotlin Class" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -88,42 +108,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/404/katas/social-network-jp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/404/Katas/final_project_jp/web/node_modules/jest",
-    "nodejs_package_manager_path": "yarn",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "C:\\404\\Katas\\final_project_jp\\web\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/404/katas/social-network-jp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/404/Katas/final_project_jp/web/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\404\\Katas\\final_project_jp\\web\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\404\Katas\final_project_jp\web\src\core\useCases" />
+      <recent name="C:\404\Katas\final_project_jp\web\test\core\useCases" />
       <recent name="C:\404\Katas\final_project_jp\web\test\common" />
       <recent name="C:\404\katas\social-network-jp\web\src\ui\screens\Home" />
       <recent name="C:\404\Katas\final_project_jp\web\src\ui\layout" />
-      <recent name="C:\404\Katas\final_project_jp\web\src" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.proyecto404.finalProjectJP.http" />
       <recent name="com.proyecto404.finalProjectJP.e2e.consoleApp" />
       <recent name="com.proyecto404.finalProjectJP.e2e.console" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.signup sends name and password">
+  <component name="RunManager" selected="Kotlin.HttpMainKt">
+    <configuration name="api [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="HttpUserService.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -134,65 +177,40 @@
       <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <method v="2" />
     </configuration>
-    <configuration name="signup build propper request" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="SignUpPresenter.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
-      <test-names>
-        <test-name value="signup build propper request" />
-      </test-names>
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" />
       <method v="2" />
     </configuration>
-    <configuration name="signup returns a response object" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Signup.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
-      <test-names>
-        <test-name value="signup returns a response object" />
-      </test-names>
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/web/test/core/useCases/Signup.test.ts" />
       <method v="2" />
     </configuration>
-    <configuration name="signup returns a respose objetc" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/web" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
-      <test-names>
-        <test-name value="signup returns a respose objetc" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="signup sends name and password" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/web" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
-      <test-names>
-        <test-name value="signup sends name and password" />
-      </test-names>
-      <method v="2" />
+    <configuration name="HttpMainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpMainKt" />
+      <module name="org.example.final_project_jp.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.signup sends name and password" />
-        <item itemvalue="Jest.signup returns a response object" />
+        <item itemvalue="Kotlin.HttpMainKt" />
+        <item itemvalue="Gradle.api [test]" />
         <item itemvalue="Jest.HttpUserService.test.ts" />
-        <item itemvalue="Jest.signup returns a respose objetc" />
-        <item itemvalue="Jest.signup build propper request" />
+        <item itemvalue="Jest.Signup.test.ts" />
+        <item itemvalue="Jest.SignUpPresenter.test.ts" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +224,7 @@
       <updated>1678218814722</updated>
       <workItem from="1678218815936" duration="1912000" />
       <workItem from="1678220815849" duration="4438000" />
+      <workItem from="1678389356172" duration="4410000" />
     </task>
     <servers />
   </component>
