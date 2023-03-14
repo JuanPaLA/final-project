@@ -1,9 +1,9 @@
-import { HttpClient } from '../HttpClient'
-import axios, { AxiosAdapter, AxiosInstance, Method } from 'axios'
-import { HttpResponse } from '../HttpResponse'
-import { HttpMethod } from '../HttpMethod'
-import { HttpRequest } from '../HttpRequest'
-import { ResponseFactory } from './ResponseFactory'
+import {HttpClient} from '../HttpClient'
+import axios, {AxiosAdapter, AxiosError, AxiosInstance, Method} from 'axios'
+import {HttpResponse} from '../HttpResponse'
+import {HttpMethod} from '../HttpMethod'
+import {HttpRequest} from '../HttpRequest'
+import {ResponseFactory} from './ResponseFactory'
 
 export class AxiosHttpClient implements HttpClient {
     private readonly http: AxiosInstance
@@ -43,7 +43,7 @@ export class AxiosHttpClient implements HttpClient {
     }
 
     private request(method: HttpMethod, url: string, data: any = null, headers: { [key: string]: string } = {}): HttpRequest {
-        return { method, url, data, headers }
+        return {method, url, data, headers}
     }
 
     async send<T = any>(request: HttpRequest, onProgress?: (progress: number) => void): Promise<HttpResponse<T>> {
@@ -55,5 +55,6 @@ export class AxiosHttpClient implements HttpClient {
             baseURL: this.baseUrl,
         })
         return this.responseFactory.create<T>(axiosResponse, request)
+
     }
 }

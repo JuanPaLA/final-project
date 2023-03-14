@@ -3,6 +3,7 @@
 package com.proyecto404.finalProjectJP.core.domain.services
 
 import com.proyecto404.finalProjectJP.core.domain.User
+import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidLoginCredentialsError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidPasswordError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidUsernameError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
@@ -22,7 +23,8 @@ class AuthService {
     fun generateSessionToken(user: User) = SessionToken(user.name.reversed())
 
     fun isValidCredentialRequest(request: Request, user: User): Boolean {
-        return User(request.userName, request.password) == user
+        if (User(request.userName, request.password) != user) throw InvalidLoginCredentialsError()
+        else return true
     }
 
     fun validateToken(token: SessionToken, user: User): Boolean {

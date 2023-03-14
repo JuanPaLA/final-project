@@ -1,8 +1,9 @@
-import { SignUpPresenter } from '@/ui/screens/Home/SignUpPresenter'
+import { SignUpPresenter } from '@/ui/screens/SignUp/SignUpPresenter'
 import { Router } from '@/ui/services/router/Router'
 import { Signup } from "@/core/useCases/Signup";
 import { anything, instance, mock, verify, when } from 'ts-mockito'
 import { expect } from "expect";
+import {mockEq} from "../../common/ts-mockito-extensions";
 
 it('name and passwords starts empty', () => {
     presenter.start()
@@ -34,7 +35,7 @@ it('username must start with @', () => {
     presenter.setUsername(`alice`)
 
     expect(presenter.isSignupEnabled()).toEqual(false)
-    verify(signup.exec(`@alice`, `1234`)).never()
+    verify(signup.exec(`alice`, `1234`)).never()
 })
 
 it('usernmame must be one single word', () => {
@@ -63,7 +64,7 @@ it('successful signup navigates to welcome', async () => {
 
     await presenter.doSignup()
 
-    verify(router.navigate('/welcome')).once()
+    verify(router.navigate('/login')).once()
 })
 
 it('do signup request with given username and password', () => {
@@ -77,7 +78,7 @@ it('do signup request with given username and password', () => {
     verify(signup.exec(`@alice`, `1234`)).once()
 })
 
-it('failed signup navigates to error', async () => {
+it('failed signup reset username and password', async () => {
     when(signup.exec(anything(), anything())).thenReject(new Error('error'))
 
     presenter.start()
@@ -87,11 +88,12 @@ it('failed signup navigates to error', async () => {
 
     await presenter.doSignup()
 
-    verify(router.navigate('/error')).once()
+    expect(presenter.model.password).toEqual('')
+    expect(presenter.model.username).toEqual('')
 })
 
 beforeEach(() => {
-    router = mock<Router>()
+    router = mockEq<Router>()
     signup = mock<Signup>()
     presenter = new SignUpPresenter(changed, instance(signup), instance(router))
 })

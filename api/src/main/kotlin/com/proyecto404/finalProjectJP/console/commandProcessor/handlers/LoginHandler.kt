@@ -8,6 +8,7 @@ import com.proyecto404.finalProjectJP.console.commandProcessor.Command
 import com.proyecto404.finalProjectJP.console.commandProcessor.CommandHandler
 import com.proyecto404.finalProjectJP.console.io.Output
 import com.proyecto404.finalProjectJP.core.Core
+import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidLoginCredentialsError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
 import com.proyecto404.finalProjectJP.core.useCases.Login.Request
 
@@ -40,6 +41,10 @@ class LoginHandler(private val output: Output, private val core: Core, private v
             }
         } catch (e: UserNotFoundError) {
             printInvalidCredentialsMessage(userName)
+        } catch (e: InvalidLoginCredentialsError) {
+            printInvalidCredentialsMessage(userName)
+        } catch (e: Exception) {
+            output.println("ERROR: ${e.message}")
         }
     }
 

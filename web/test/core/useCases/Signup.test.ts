@@ -1,17 +1,19 @@
 import {Signup} from "@/core/useCases/Signup";
 import {instance, mock, verify} from 'ts-mockito'
 import {HttpUserService} from "@/core/infrastructure/HttpUserService";
+import {UserService} from "@/core/model/UserService";
 
 it('signup request service with given username and password', () => {
     signup.exec("@alice", "1234")
 
-    verify(httpService.signup("@alice", "1234")).once()
+    verify(service.signup("@alice", "1234")).once()
 })
 
 beforeEach(() => {
-    httpService = mock(HttpUserService)
-    signup = new Signup(instance(httpService))
+    service = mock<UserService>()
+
+    signup = new Signup(instance(service))
 })
 
-let httpService: HttpUserService
+let service: UserService
 let signup: Signup

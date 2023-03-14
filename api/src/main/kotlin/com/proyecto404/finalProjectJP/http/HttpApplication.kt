@@ -1,19 +1,20 @@
 package com.proyecto404.finalProjectJP.http
 
 import com.proyecto404.finalProjectJP.core.Core
+import com.proyecto404.finalProjectJP.http.controllers.AuthController
 import com.proyecto404.finalProjectJP.http.controllers.UserController
 import io.javalin.Javalin
-import io.javalin.config.JavalinConfig
-import io.javalin.plugin.bundled.CorsContainer
-import io.javalin.plugin.bundled.CorsPluginConfig
 
 class HttpApplication(private val config: Configuration) {
-    private val httpServer = Javalin.create { config: JavalinConfig ->
-        config.plugins.enableCors { cors: CorsContainer -> cors.add { it: CorsPluginConfig -> it.anyHost() } }
-    };
+
+    private val httpServer = Javalin.create{
+        config ->
+        config.enableCorsForAllOrigins()
+    }
 
     init {
         UserController(httpServer, config.core)
+        AuthController(httpServer, config.core)
     }
 
     fun start() {

@@ -7,8 +7,4 @@ export class HttpUserService implements UserService {
     async signup(name: string, password: string) {
         await this.httpClient.post('/users', { name, password })
     }
-
-    login(name: void, password: string): Promise<void> {
-        return Promise.resolve(undefined);
-    }
 }

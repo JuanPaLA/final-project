@@ -1,7 +1,6 @@
 package com.proyecto404.finalProjectJP.http.controllers
 
 import com.eclipsesource.json.Json
-import com.eclipsesource.json.JsonObject
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.useCases.SignUp
 import io.javalin.Javalin

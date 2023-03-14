@@ -31,13 +31,16 @@ export class SignUpPresenter extends DefaultPresenter<SignUpVM> {
     }
 
     async doSignup() {
-        // if (!this.isSignupEnabled()) return
+        if (!this.isSignupEnabled()) return
         try {
             await this.signup.exec(this.model.username, this.model.password)
-            // this.router.navigate('/welcome')
+            this.setPassword('')
+            this.setUsername('')
+            this.router.navigate('/login')
         } catch (e) {
-            console.log(e.message, "ureeeeeeeeeeeeureeeeeeeeeeeeureeeeeeeeeeeeureeeeeeeeeeeeureeeeeeeeeeeeureeeeeeeeeeeeureeeeeeeeeeee")
-            // this.router.navigate('/error')
+            console.log(e.message)
+            this.setPassword('')
+            this.setUsername('')
         }
     }
 }

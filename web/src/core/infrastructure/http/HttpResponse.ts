@@ -10,3 +10,9 @@ export interface HttpResponse<T> {
     headers: { [key: string]: string };
     requestData: any;
 }
+
+export interface LoginResponse {
+    token: string;
+    payload: string;
+    error?: string;
+}

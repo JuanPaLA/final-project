@@ -1,3 +1,8 @@
-import { SignUpScreen } from '@/ui/screens/Home/SignUpScreen'
+import { SignUpScreen } from '@/ui/screens/SignUp/SignUpScreen'
+import {StyledMain} from "@/ui/layout/styles/Globals";
 
-export default () => <SignUpScreen />
+export default () =>(
+    <StyledMain>
+        <SignUpScreen />
+    </StyledMain>
+)

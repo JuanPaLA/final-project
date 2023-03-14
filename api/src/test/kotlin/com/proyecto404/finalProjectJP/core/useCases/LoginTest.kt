@@ -2,6 +2,7 @@ package com.proyecto404.finalProjectJP.core.useCases
 
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.domain.User
+import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidLoginCredentialsError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
 import com.proyecto404.finalProjectJP.core.domain.services.AuthService
@@ -45,14 +46,12 @@ class LoginTest {
 
     @Test
     fun `users cannot login with invalid password`() {
-        every { authService.isValidCredentialRequest(Login.Request("@alice", "1111"), User("@alice", "1234")) } returns false
+        val login = Login(users, AuthService())
+
         signup.exec(Request("@alice", "1234"))
 
-        val response = login.exec(Login.Request("@alice", "1111"))
-
-        assertThat(response).isEqualTo(Response(null))
-        assertThrows<UserNotAuthenticatedError> {
-            users.get("@alice").token()
+        assertThrows<InvalidLoginCredentialsError> {
+            login.exec(Login.Request("@alice", "1111"))
         }
     }
 
@@ -67,11 +66,12 @@ class LoginTest {
 
     @Test
     fun `user cannot login with empty password`() {
+        val login = Login(users, AuthService())
         signup.exec(Request("@alice", "1234"))
 
-         val response = login.exec(Login.Request("@alice", ""))
-
-        assertThat(response).isEqualTo(Response(null))
+        assertThrows<InvalidLoginCredentialsError> {
+            login.exec(Login.Request("@alice", ""))
+        }
     }
 
     private val users = InMemoryUsers()
