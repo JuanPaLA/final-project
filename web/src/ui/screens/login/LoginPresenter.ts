@@ -34,6 +34,10 @@ export class LoginPresenter extends DefaultPresenter<LoginVM> {
         )
     }
 
+    navigateToCreate() {
+        this.router.navigate("/")
+    }
+
     async doLogin() {
         if (!this.isLoginEnabled()) return
         try {
@@ -43,9 +47,9 @@ export class LoginPresenter extends DefaultPresenter<LoginVM> {
             if (e instanceof InvalidCredentialsError) {
                 this.setError(`Invalid credentials for ${this.model.username}`)
             } else if (e instanceof UserNotFoundError) {
-                this.setError(`User not found`)
+                this.setError(`Invalid credentials for ${this.model.username}`)
             } else {
-                this.setError(`Unexpected error`)
+                this.setError(`Invalid credentials for ${this.model.username}`)
             }
         }
         this.setPassword('')

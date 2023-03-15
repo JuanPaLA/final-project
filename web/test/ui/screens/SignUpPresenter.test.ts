@@ -1,4 +1,4 @@
-import { SignUpPresenter } from '@/ui/screens/SignUp/SignUpPresenter'
+import { SignUpPresenter } from '@/ui/screens/signUp/SignUpPresenter'
 import { Router } from '@/ui/services/router/Router'
 import { Signup } from "@/core/useCases/Signup";
 import { anything, instance, mock, verify, when } from 'ts-mockito'

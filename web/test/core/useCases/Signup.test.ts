@@ -1,6 +1,5 @@
 import {Signup} from "@/core/useCases/Signup";
 import {instance, mock, verify} from 'ts-mockito'
-import {HttpUserService} from "@/core/infrastructure/HttpUserService";
 import {UserService} from "@/core/model/UserService";
 
 it('signup request service with given username and password', () => {
@@ -11,7 +10,6 @@ it('signup request service with given username and password', () => {
 
 beforeEach(() => {
     service = mock<UserService>()
-
     signup = new Signup(instance(service))
 })
 

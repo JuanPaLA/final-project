@@ -1,23 +1,17 @@
-import {anything, instance, mock, verify, when} from "ts-mockito";
+import {anything, instance, verify, when} from "ts-mockito";
 import {mockEq} from "../../../common/ts-mockito-extensions";
 import {HttpClient} from "@/core/infrastructure/http/HttpClient";
 import {HttpAuthService} from "@/core/infrastructure/HttpAuthService";
 import {SessionState} from "@/session/SessionState";
 import {AuthService} from "@/core/model/AuthService";
-import {HttpResponse, LoginResponse} from "@/core/infrastructure/http/HttpResponse";
-import {UserSession} from "@/session/UserSession";
-import exp from "constants";
-import {expect} from "expect";
+import {FakeHttpResponse} from "./FakeHttpResponse";
+import {InvalidCredentialsError} from "@/core/infrastructure/InvalidCredentialsError";
+import {UserNotFoundError} from "@/core/infrastructure/UserNotFoundError";
 
 it('login sends name and password post request to /login', async () => {
+    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse({token: "token"}, 200))
     let name = '@alice';
     let password = '1234';
-    let response = <HttpResponse<LoginResponse>>({
-        body: {
-            token: '1234'
-        }})
-
-    when(client.post('/login', anything())).thenResolve(response)
 
     await service.login('@alice', '1234')
 
@@ -25,23 +19,26 @@ it('login sends name and password post request to /login', async () => {
 })
 
 it('login saves token in session', async () => {
-    let name = '@alice';
-    let password = '1234';
-    let response = <HttpResponse<LoginResponse>>({
-            body: {
-                token: '1234'
-            }})
-
-    when(client.post('/login', {name, password})).thenResolve(response)
+    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse({token: "token"}, 200))
 
     await service.login('@alice', '1234')
 
-    verify(session.authenticate(new UserSession("@alice", "1234"))).called()
+    verify(session.authenticate(anything())).called()
 })
 
-// it('failed login throws AxiosError with code 403', async() => {
-//
-// })
+it('login with invalid credentials throws error', async () => {
+    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 401))
+
+    await expect(service.login('@alice', '1234')).rejects.toEqual(new InvalidCredentialsError('Invalid credentials for user @alice'))
+    verify(session.authenticate(anything())).never()
+})
+
+it('login request fails with non existing users', async () => {
+    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 404))
+
+    await expect(service.login('@alice', '1234')).rejects.toEqual(new UserNotFoundError('Invalid credentials for user @alice'))
+    verify(session.authenticate(anything())).never()
+})
 
 beforeEach(() => {
     session = mockEq<SessionState>()

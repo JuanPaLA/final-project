@@ -1,7 +1,8 @@
 import {WebAppServices} from "@/ui/WebApp";
 import {useAppPresenter} from "@/ui/lib/presenters/useAppPresenter";
 import {Container, FormControl, StyledAnchor} from "@/ui/layout/styles/Globals";
-import {LoginPresenter} from "@/ui/screens/Login/LoginPresenter";
+import {LoginPresenter} from "@/ui/screens/login/LoginPresenter";
+import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 
 const loginPresenter = (onChange, services: WebAppServices) => new LoginPresenter(onChange, services.login, services.router)
 
@@ -22,9 +23,10 @@ export const LoginScreen = () => {
                 <button onClick={()=>!presenter.doLogin()} disabled={!presenter.isLoginEnabled()}>Login</button>
             </FormControl>
             <p id={"error"}>{presenter.model.error}</p>
-            <StyledAnchor href={"/"}>
-                Create account
-            </StyledAnchor>
+            <SecondaryButton
+                onClick={()=> presenter.navigateToCreate()}
+                value={"Create account"}
+            />
         </Container>
     )
 }

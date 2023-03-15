@@ -11,14 +11,14 @@ export class HttpAuthService implements AuthService {
 
     async login(name: string, password: string) {
         let response = await this.httpClient.post<LoginResponse>('/login', { name, password })
-        if (response.status == 200) {
+        if (response.status === 200) {
             let userSession = new UserSession(name, response.body.token)
             this.session.authenticate(userSession)
         } else {
             if (response.status === 401) {
-                throw new InvalidCredentialsError('Invalid credentials')
+                throw new InvalidCredentialsError(`Invalid credentials for user ${name}`)
             } else if (response.status === 404) {
-                throw new UserNotFoundError('User not found')
+                throw new UserNotFoundError(`Invalid credentials for user ${name}`)
             } else {
                 throw new Error('Unexpected error')
             }

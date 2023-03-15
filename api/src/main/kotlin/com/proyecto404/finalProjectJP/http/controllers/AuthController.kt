@@ -24,10 +24,10 @@ class AuthController(private val http: Javalin, private val core: Core) {
             ctx.status(200).json(response)
         } catch (e: InvalidLoginCredentialsError) {
             val response = JsonObject().add("error", "Invalid credentials").toString()
-            ctx.status(403).json(response)
+            ctx.status(401).json(response)
         } catch (e: UserNotFoundError) {
             val response = JsonObject().add("error", "User not found").toString()
-            ctx.status(401).json(response)
+            ctx.status(404).json(response)
         } catch (e: Exception) {
             val response = JsonObject().add("error", "Internal server error").toString()
             ctx.status(500).json(response)

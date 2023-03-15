@@ -55,6 +55,5 @@ export class AxiosHttpClient implements HttpClient {
             baseURL: this.baseUrl,
         })
         return this.responseFactory.create<T>(axiosResponse, request)
-
     }
 }

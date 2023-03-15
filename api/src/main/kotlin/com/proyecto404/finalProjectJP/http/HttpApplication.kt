@@ -2,6 +2,7 @@ package com.proyecto404.finalProjectJP.http
 
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.http.controllers.AuthController
+import com.proyecto404.finalProjectJP.http.controllers.PostController
 import com.proyecto404.finalProjectJP.http.controllers.UserController
 import io.javalin.Javalin
 
@@ -15,6 +16,7 @@ class HttpApplication(private val config: Configuration) {
     init {
         UserController(httpServer, config.core)
         AuthController(httpServer, config.core)
+        PostController(httpServer, config.core)
     }
 
     fun start() {

@@ -1,4 +1,5 @@
 import { HttpMethod } from './HttpMethod'
+import { Post } from "@/core/useCases/Post";
 
 export interface HttpResponse<T> {
     method: HttpMethod;
@@ -14,5 +15,15 @@ export interface HttpResponse<T> {
 export interface LoginResponse {
     token: string;
     payload: string;
+    error?: string;
+}
+
+export interface PostResponse {
+    id?: number;
+    error?: string;
+}
+
+export interface ReadResponse {
+    posts: Post[] | null;
     error?: string;
 }

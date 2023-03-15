@@ -1,3 +1,3 @@
-import { LoginScreen } from "@/ui/screens/Login/LoginScreen";
+import { LoginScreen } from "@/ui/screens/login/LoginScreen";
 
 export default () => <LoginScreen />

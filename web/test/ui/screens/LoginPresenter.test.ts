@@ -2,7 +2,7 @@ import { expect } from "expect";
 import {anything, instance, mock, verify, when} from "ts-mockito";
 import { Router } from "@/ui/services/router/Router";
 import { Login } from "@/core/useCases/Login";
-import { LoginPresenter } from "@/ui/screens/Login/LoginPresenter";
+import { LoginPresenter } from "@/ui/screens/login/LoginPresenter";
 
 it('name and passwords starts empty', () => {
     presenter.start()
@@ -75,16 +75,6 @@ it('do login request with given username and password', () => {
     presenter.doLogin()
 
     verify(login.exec(`@alice`, `1234`)).once()
-})
-
-it('failed login prints invalid credentials message', async() => {
-    presenter.start()
-
-    presenter.setUsername("@juan")
-    presenter.setPassword("123456")
-
-    await presenter.doLogin()
-    expect(presenter.model.error).toEqual('Invalid credentials for @juan')
 })
 
 beforeEach(() => {

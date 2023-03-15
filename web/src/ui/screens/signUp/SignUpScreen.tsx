@@ -1,7 +1,8 @@
 import {WebAppServices} from '@/ui/WebApp'
-import {SignUpPresenter} from '@/ui/screens/SignUp/SignUpPresenter'
+import {SignUpPresenter} from '@/ui/screens/signUp/SignUpPresenter'
 import {useAppPresenter} from '@/ui/lib/presenters/useAppPresenter'
 import {Container, FormControl, StyledAnchor} from '@/ui/layout/styles/Globals.js'
+import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 
 const signUpPresenter = (onChange, services: WebAppServices) =>
     new SignUpPresenter(onChange, services.signup, services.router)
@@ -24,9 +25,11 @@ export const SignUpScreen = () => {
                     Signup
                 </button>
             </FormControl>
-            <StyledAnchor href={"/login"}>
-                Login
-            </StyledAnchor>
+            <p>{presenter.model.error}</p>
+            <SecondaryButton
+                onClick={()=> presenter.navigateToLogin()}
+                value={"Login"}
+            />
         </Container>
     )
 }

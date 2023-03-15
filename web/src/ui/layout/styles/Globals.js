@@ -29,6 +29,15 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media ${device.extralarge} { 
+    width: 9000px;
+  }
+  @media ${device.large} {
+    width: 700px;
+  }
+  @media ${device.mediumlarge} {
+    width: 500px;
+  }
 `
 
 export const StyledForm = styled.form`

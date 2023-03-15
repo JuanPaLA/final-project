@@ -1,9 +1,9 @@
 import { AuthService } from "@/core/model/AuthService";
 
 export class Login {
-    constructor(private userService: AuthService) {}
+    constructor(private authService: AuthService) {}
 
     async exec(name: string, password: string) {
-        await this.userService.login(name, password)
+        await this.authService.login(name, password)
     }
 }

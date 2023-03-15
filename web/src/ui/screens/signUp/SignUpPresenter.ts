@@ -2,11 +2,12 @@ import { DefaultPresenter } from '@/ui/lib/presenters/DefaultPresenter'
 import { ChangeFunc } from '@/ui/lib/presenters/ChangeFunc'
 import { Router } from '@/ui/services/router/Router'
 import { Signup } from "@/core/useCases/Signup";
+import {RepeatedUserError} from "@/core/infrastructure/RepeatedUserError";
 
 export class SignUpPresenter extends DefaultPresenter<SignUpVM> {
     constructor(onChange: ChangeFunc, private signup: Signup, private router: Router) {
         super(onChange)
-        this.model = { username: '', password: '' }
+        this.model = { username: '', password: '', error: '' }
     }
 
     start() {
@@ -15,6 +16,10 @@ export class SignUpPresenter extends DefaultPresenter<SignUpVM> {
 
     setUsername(username: string) {
         this.updateModel({ username })
+    }
+
+    setError(error: string) {
+        this.updateModel({ error })
     }
 
     setPassword(password: string) {
@@ -38,14 +43,23 @@ export class SignUpPresenter extends DefaultPresenter<SignUpVM> {
             this.setUsername('')
             this.router.navigate('/login')
         } catch (e) {
-            console.log(e.message)
-            this.setPassword('')
-            this.setUsername('')
+            if (e instanceof RepeatedUserError) {
+                this.setError(`Repeated username ${this.model.username}`)
+            } else {
+                this.setError(`Unexpected error`)
+            }
         }
+        this.setPassword('')
+        this.setUsername('')
+    }
+
+    navigateToLogin() {
+        this.router.navigate("/login")
     }
 }
 
 interface SignUpVM {
     username: string
     password: string
+    error: string
 }
