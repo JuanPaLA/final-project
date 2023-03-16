@@ -1,7 +1,7 @@
 package com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory
 
 import com.proyecto404.finalProjectJP.core.domain.Post
-import com.proyecto404.finalProjectJP.core.domain.Posts
+import com.proyecto404.finalProjectJP.core.domain.repositories.Posts
 import com.proyecto404.finalProjectJP.core.domain.services.PostNotFoundError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.EmptyPostError
 

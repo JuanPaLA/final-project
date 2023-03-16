@@ -5,35 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/core/infrastructure/UserNotAuthenticatedError.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/org.example.final_project_jp.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/.env.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/repositories/RepositoryProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryRepositoryProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/jooq/Credentials.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/jooq/JooqPosts.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/jooq/JooqRelationships.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/jooq/JooqRepositoryProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/jooq/JooqUsers.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/db/structure/V20230316123430__users_initial.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/console/ConsoleApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/console/ConsoleApp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/Core.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/Core.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/PostController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/PostController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/Posts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/repositories/Posts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/Relationships.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/repositories/Relationships.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/Users.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/domain/repositories/Users.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryPosts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryPosts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryRelationships.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryRelationships.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryUsers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/infraestructure/persistence/inMemory/InMemoryUsers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Follow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Follow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Followers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Followers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Following.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Following.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Post.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Read.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Read.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/SignUp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/SignUp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Unfollow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Unfollow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Wall.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Wall.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/httpMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/httpMain.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/console/handlers/LogoutHandlerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/console/handlers/LogoutHandlerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpAuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpAuthService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpPostService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpPostService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/RepeatedUserError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/RepeatedUserError.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/http/HttpResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/http/HttpResponse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/model/PostService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/model/PostService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/model/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/model/UserService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/useCases/Read.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/useCases/Read.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/Footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/Layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/login/LoginPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/login/LoginPresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpPresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/user/UserPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserPresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +83,18 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="final_project_jp" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="flyway" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="final_project_jp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="jooq" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="final_project_jp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
@@ -86,9 +108,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Kotlin Class" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -106,74 +128,62 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/404/Katas/final_project_jp/web/src/ui/screens/Home&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;C:/404/Katas/final_project_jp/web/node_modules/jest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\404\\Katas\\final_project_jp\\web\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/lmelian/repos/migue_social",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/404/Katas/final_project_jp/web/node_modules/jest",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "profiler.jvm",
+    "ts.external.directory.path": "C:\\404\\Katas\\final_project_jp\\web\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lmelian\repos\juampi_finale\api" />
       <recent name="C:\404\Katas\final_project_jp\web\src\ui\screens\Home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lmelian\repos\juampi_finale\api\src\main\kotlin\com\proyecto404\finalProjectJP\core\domain\repositories" />
       <recent name="C:\404\Katas\final_project_jp\web\src\ui\layout" />
       <recent name="C:\404\Katas\final_project_jp\web\src\core\model" />
       <recent name="C:\404\Katas\final_project_jp\web\src\ui\screens\Home" />
       <recent name="C:\404\Katas\final_project_jp\web\ui\screens\Home" />
-      <recent name="C:\404\Katas\final_project_jp\web\src\ui\components" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.proyecto404.finalProjectJP.core.domain" />
       <recent name="com.proyecto404.finalProjectJP.http" />
       <recent name="com.proyecto404.finalProjectJP.e2e.consoleApp" />
       <recent name="com.proyecto404.finalProjectJP.e2e.console" />
     </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.proyecto404.finalProjectJP.core.infraestructure.persistence.jooq" />
+      <recent name="com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory" />
+      <recent name="com.proyecto404.finalProjectJP.core.infraestructure.repositories" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.api [test]">
-    <configuration name="TwitterE2ETest.follow" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.proyecto404.finalProjectJP.e2e.httpApp.TwitterE2ETest.follow&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="api [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Kotlin.HttpMainKt (1)">
+    <configuration name="api [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -184,7 +194,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -194,49 +204,83 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="HttpUserService.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/web" />
-      <envs />
-      <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
+    <configuration name="api [flywayClean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="flywayClean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="getPosts fetch posts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/web" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" />
-      <test-names>
-        <test-name value="getPosts fetch posts" />
-      </test-names>
+    <configuration name="api [flywayMigrate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="flywayMigrate" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="users can not be created with repeated names" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/web" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
-      <test-names>
-        <test-name value="users can not be created with repeated names" />
-      </test-names>
+    <configuration name="api [generateJooq]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateJooq" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
+    </configuration>
+    <configuration name="HttpMainKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.proyecto404.finalProjectJP.http.HttpMainKt" />
+      <module name="org.example.final_project_jp.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.api [test]" />
-        <item itemvalue="Gradle.TwitterE2ETest.follow" />
-        <item itemvalue="Jest.HttpUserService.test.ts" />
-        <item itemvalue="Jest.users can not be created with repeated names" />
-        <item itemvalue="Jest.getPosts fetch posts" />
+        <item itemvalue="Kotlin.HttpMainKt (1)" />
+        <item itemvalue="Gradle.api [build]" />
+        <item itemvalue="Gradle.api [generateJooq]" />
+        <item itemvalue="Gradle.api [flywayMigrate]" />
+        <item itemvalue="Gradle.api [flywayClean]" />
       </list>
     </recent_temporary>
   </component>
@@ -255,6 +299,11 @@
       <workItem from="1678710672235" duration="18267000" />
       <workItem from="1678796702108" duration="26709000" />
       <workItem from="1678886450873" duration="27172000" />
+      <workItem from="1678979903085" duration="143000" />
+      <workItem from="1678980491955" duration="165000" />
+      <workItem from="1678980665565" duration="6304000" />
+      <workItem from="1678989579835" duration="1527000" />
+      <workItem from="1678991125342" duration="6192000" />
     </task>
     <servers />
   </component>

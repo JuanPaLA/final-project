@@ -9,11 +9,9 @@ import com.proyecto404.finalProjectJP.console.session.User
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.Core.Configuration
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryPosts
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRelationships
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
-import org.junit.jupiter.api.Test
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRepositoryProvider
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 class LogoutHandlerTest {
     @Test
@@ -42,7 +40,7 @@ class LogoutHandlerTest {
     }
 
     private val output = FakeOutput()
-    private val core = Core(Configuration(InMemoryUsers(), InMemoryPosts(), InMemoryRelationships()))
+    private val core = Core(Configuration(InMemoryRepositoryProvider()))
     private val session = SessionState()
     private val handler = LogoutHandler(output, core, session)
 }

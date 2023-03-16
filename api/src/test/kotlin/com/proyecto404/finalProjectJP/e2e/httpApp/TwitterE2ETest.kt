@@ -3,12 +3,12 @@ package com.proyecto404.finalProjectJP.e2e.httpApp
 import com.eclipsesource.json.JsonObject
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.Core.Configuration
-import com.proyecto404.finalProjectJP.core.domain.Post
-import com.proyecto404.finalProjectJP.core.domain.User
+import com.proyecto404.finalProjectJP.core.domain.*
+import com.proyecto404.finalProjectJP.core.domain.repositories.posts
+import com.proyecto404.finalProjectJP.core.domain.repositories.relationships
+import com.proyecto404.finalProjectJP.core.domain.repositories.users
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryPosts
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRelationships
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRepositoryProvider
 import com.proyecto404.finalProjectJP.http.HttpApplication
 import io.restassured.module.kotlin.extensions.Extract
 import io.restassured.module.kotlin.extensions.Given
@@ -132,11 +132,12 @@ class TwitterE2ETest {
         httpApp.stop()
     }
 
-    private val posts = InMemoryPosts()
-    private val users = InMemoryUsers()
-    private val relationships = InMemoryRelationships()
-    private val core = Core(Configuration(users, posts, relationships))
+    private val repositories = InMemoryRepositoryProvider()
+    private val posts = repositories.posts()
+    private val users = repositories.users()
+    private val relationships = repositories.relationships()
+    private val core = Core(Configuration(repositories))
     private val config = HttpApplication.Configuration(6060, core)
     private val httpApp = HttpApplication(config)
-    private val baseUrl = "http://localhost:6060";
+    private val baseUrl = "http://localhost:6060"
 }

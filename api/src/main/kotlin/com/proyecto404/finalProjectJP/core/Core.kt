@@ -1,26 +1,27 @@
 package com.proyecto404.finalProjectJP.core
 
-import com.proyecto404.finalProjectJP.core.domain.Posts
-import com.proyecto404.finalProjectJP.core.domain.Relationships
-import com.proyecto404.finalProjectJP.core.domain.Users
+import com.proyecto404.finalProjectJP.core.domain.repositories.RepositoryProvider
+import com.proyecto404.finalProjectJP.core.domain.repositories.posts
+import com.proyecto404.finalProjectJP.core.domain.repositories.relationships
+import com.proyecto404.finalProjectJP.core.domain.repositories.users
 import com.proyecto404.finalProjectJP.core.domain.services.AuthService
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryPosts
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRelationships
-import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 import com.proyecto404.finalProjectJP.core.useCases.*
 
-class Core(private val config: Configuration) {
+class Core(config: Configuration) {
     private val authService = AuthService()
+    private val users = config.repositories.users()
+    private val posts = config.repositories.posts()
+    private val relationships = config.repositories.relationships()
 
-    fun signup() = SignUp(config.users)
-    fun login() = Login(config.users, authService)
-    fun post() = Post(config.posts, config.users, authService)
-    fun read() = Read(config.posts, config.users, authService)
-    fun follow() = Follow(config.relationships, config.users, authService)
-    fun wall() = Wall(config.posts, config.users, config.relationships, authService)
-    fun following() = Following(config.users, config.relationships, authService)
-    fun followers() = Followers(config.users, config.relationships, authService)
-    fun unfollow() = Unfollow(config.users, config.relationships, authService)
+    fun signup() = SignUp(users)
+    fun login() = Login(users, authService)
+    fun post() = Post(posts, users, authService)
+    fun read() = Read(posts, users, authService)
+    fun follow() = Follow(relationships, users, authService)
+    fun wall() = Wall(posts, users, relationships, authService)
+    fun following() = Following(users, relationships, authService)
+    fun followers() = Followers(users, relationships, authService)
+    fun unfollow() = Unfollow(users, relationships, authService)
 
-    data class Configuration(val users: Users, val posts: Posts, val relationships: Relationships)
+    data class Configuration(val repositories: RepositoryProvider)
 }
