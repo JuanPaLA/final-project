@@ -19,11 +19,10 @@ it('createPost with username and contents', async ()=> {
 
 it('getPosts fetch posts', async ()=> {
     when(client.get(anything(), anything())).thenResolve(new FakeHttpResponse({posts: null}, 200))
-    let headers = {Authorization: "token", Requester: "username"}
 
-    service.getPosts(anything(), anything(), anything())
+    await service.getPosts(anything(), anything(), anything())
 
-    verify(client.get(anything())).called()
+    verify(client.get(anything(), anything())).called()
 })
 
 beforeEach(()=> {

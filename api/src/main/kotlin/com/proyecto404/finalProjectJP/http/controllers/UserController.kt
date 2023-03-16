@@ -21,11 +21,13 @@ class UserController(private val http: Javalin, private val core: Core) {
             core.signup().exec(SignUp.Request(userName, password))
             ctx.status(201)
         } catch (e: RepeatedUsernameError) {
-            val response = JsonObject().add("error", "Repeated username").toString()
-            ctx.status(409).json(response)
+            val response = JsonObject().add("error", "Username already exists")
+            val body = JsonObject().add("body", response)
+            ctx.status(409).json(body)
         } catch (e: Exception) {
-            val response = JsonObject().add("error", "Internal server error").toString()
-            ctx.status(500).json(response)
+            val response = JsonObject().add("error", "Unexpected error")
+            val body = JsonObject().add("body", response)
+            ctx.status(500).json(body)
         }
     }
 

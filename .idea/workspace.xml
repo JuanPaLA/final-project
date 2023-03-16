@@ -5,57 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/PostController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpPostService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/core/infrastructure/RepeatedUserError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/core/model/PostService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/core/useCases/Post.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/core/useCases/Read.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/users/[name].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/components/buttons/AnchorButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/components/buttons/PrimaryButon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/components/buttons/SecondaryButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/layout/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/layout/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/layout/Layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserPresenter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/FakeHttpResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/core/useCases/Post.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/core/useCases/Read.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test/ui/screens/UserPresenter.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/core/infrastructure/UserNotAuthenticatedError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/console/ConsoleApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/console/ConsoleApp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/Core.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/Core.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/HttpApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/HttpApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/AuthController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/AuthController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/PostController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/PostController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/httpMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/httpMain.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/console/handlers/LogoutHandlerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/console/handlers/LogoutHandlerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpAuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpAuthService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpPostService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpPostService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/HttpUserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/RepeatedUserError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/RepeatedUserError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/http/HttpResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/http/HttpResponse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/infrastructure/http/axiosClient/AxiosHttpClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/infrastructure/http/axiosClient/AxiosHttpClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/core/useCases/Login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/useCases/Login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/model/PostService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/model/PostService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/model/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/model/UserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/core/useCases/Read.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/core/useCases/Read.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/WebApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/styles/Globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/layout/styles/Globals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Home/HomePresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Login/LoginPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/login/LoginPresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/Login/LoginScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/login/LoginScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/SignUp/SignUpPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpPresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/SignUp/SignUpScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpAuthService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpAuthService.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/Layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/login/LoginPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/login/LoginPresenter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpPresenter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/user/UserPresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserPresenter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/core/useCases/Signup.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/core/useCases/Signup.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/ui/screens/Home.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/ui/screens/HomePresenter.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/ui/screens/LoginPresenter.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/ui/screens/LoginPresenter.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/ui/screens/SignUpPresenter.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,8 +149,8 @@
       <recent name="com.proyecto404.finalProjectJP.e2e.console" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.createPost with username and contents">
-    <configuration name="TwitterE2ETest.read" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.api [test]">
+    <configuration name="TwitterE2ETest.follow" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -185,7 +163,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.proyecto404.finalProjectJP.e2e.httpApp.TwitterE2ETest.read&quot;" />
+            <option value="&quot;com.proyecto404.finalProjectJP.e2e.httpApp.TwitterE2ETest.follow&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,17 +173,35 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="createPost with username and contents" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="api [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HttpUserService.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpPostService.test.ts" />
-      <test-names>
-        <test-name value="createPost with username and contents" />
-      </test-names>
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <method v="2" />
     </configuration>
     <configuration name="getPosts fetch posts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
@@ -221,39 +217,26 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="post request service with given username, content and token" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="users can not be created with repeated names" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/web" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/useCases/Post.test.ts" />
+      <test-file value="$PROJECT_DIR$/web/test/core/infraestructure/http/HttpUserService.test.ts" />
       <test-names>
-        <test-name value="post request service with given username, content and token" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="read posts request service with given users and token" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/web/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/web" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/web/test/core/useCases/Read.test.ts" />
-      <test-names>
-        <test-name value="read posts request service with given users and token" />
+        <test-name value="users can not be created with repeated names" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.createPost with username and contents" />
-        <item itemvalue="Gradle.TwitterE2ETest.read" />
+        <item itemvalue="Gradle.api [test]" />
+        <item itemvalue="Gradle.TwitterE2ETest.follow" />
+        <item itemvalue="Jest.HttpUserService.test.ts" />
+        <item itemvalue="Jest.users can not be created with repeated names" />
         <item itemvalue="Jest.getPosts fetch posts" />
-        <item itemvalue="Jest.post request service with given username, content and token" />
-        <item itemvalue="Jest.read posts request service with given users and token" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +254,7 @@
       <workItem from="1678461507101" duration="16210000" />
       <workItem from="1678710672235" duration="18267000" />
       <workItem from="1678796702108" duration="26709000" />
-      <workItem from="1678886450873" duration="17026000" />
+      <workItem from="1678886450873" duration="27172000" />
     </task>
     <servers />
   </component>

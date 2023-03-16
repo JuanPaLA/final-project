@@ -15,11 +15,16 @@ export class UserPresenter extends DefaultPresenter<UserVM> {
         this.model = { posts: [] }
     }
 
+    setPosts(posts) {
+        this.updateModel({ posts })
+    }
+
     async start() {
         let { name } = this.router.query
         let token = this.session.getSession().token
         let requester = this.session.getSession().name
-        await this.read.exec(requester, name.toString(), token)
+        let response = await this.read.exec(requester, name.toString(), token)
+        this.setPosts(response.body.posts)
     }
 
     navigateToHome() {

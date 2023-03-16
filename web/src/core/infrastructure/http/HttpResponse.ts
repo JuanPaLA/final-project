@@ -27,3 +27,7 @@ export interface ReadResponse {
     posts: Post[] | null;
     error?: string;
 }
+
+export interface UserResponse {
+    error?: string
+}

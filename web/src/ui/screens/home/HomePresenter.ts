@@ -44,11 +44,17 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
     }
 
     async doPost() {
-        if (this.isPostDisabled()) return
-        if (!this.session.isAuthenticated()) return
-        let content = this.model.content
-        let {name, token} = this.session.getSession()
-        await this.post.exec(name, content, token)
+        try {
+            if (this.isPostDisabled()) return
+            if (!this.session.isAuthenticated()) return
+            let content = this.model.content
+            let {name, token} = this.session.getSession()
+            await this.post.exec(name, content, token)
+        } catch (e) {
+            if (e instanceof Error) {
+                alert(e.message)
+            }
+        }
         this.setContent('')
     }
 }

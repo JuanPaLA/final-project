@@ -45,11 +45,11 @@ export class LoginPresenter extends DefaultPresenter<LoginVM> {
             this.router.navigate('/home')
         } catch (e) {
             if (e instanceof InvalidCredentialsError) {
-                this.setError(`Invalid credentials for ${this.model.username}`)
+                this.setError(e.message)
             } else if (e instanceof UserNotFoundError) {
-                this.setError(`Invalid credentials for ${this.model.username}`)
+                this.setError(e.message)
             } else {
-                this.setError(`Invalid credentials for ${this.model.username}`)
+                this.setError(`Unexpected error. Try again!`)
             }
         }
         this.setPassword('')

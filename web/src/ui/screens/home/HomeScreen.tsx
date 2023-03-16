@@ -4,7 +4,6 @@ import {HomePresenter} from "@/ui/screens/home/HomePresenter";
 import styled from "styled-components";
 import {colors, Container, StyledMain} from "@/ui/layout/styles/Globals";
 import PrimaryButton from "@/ui/components/buttons/PrimaryButon";
-import Header from "@/ui/layout/Header";
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 import React from "react";
 

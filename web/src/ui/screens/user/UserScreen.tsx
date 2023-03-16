@@ -28,9 +28,23 @@ export const UserScreen = ({user}) => {
                 />
                 <h1>{user}</h1>
             </StyledNav>
-        </>
+
+            {presenter.model.posts.length > 0 && (
+                <div>
+                    {presenter.model.posts.map((post, i) => (
+                        <div key={i}>
+                            {post.content}
+                        </div>
+                    ))}
+                </div>
+            )}
+           </>
     )
 }
+
+const Post = styled.div`
+    color: aliceblue;
+`
 
 const StyledNav = styled.nav`
   display: flex;

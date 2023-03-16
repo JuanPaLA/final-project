@@ -44,9 +44,9 @@ export class SignUpPresenter extends DefaultPresenter<SignUpVM> {
             this.router.navigate('/login')
         } catch (e) {
             if (e instanceof RepeatedUserError) {
-                this.setError(`Repeated username ${this.model.username}`)
+                this.setError(e.message)
             } else {
-                this.setError(`Unexpected error`)
+                this.setError(e.message || e.error)
             }
         }
         this.setPassword('')

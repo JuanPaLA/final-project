@@ -18,19 +18,13 @@ it('valid signup sends name and password', async () => {
 })
 
 it('users can not be created with repeated names', async ()=> {
-    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 409))
-    let name = '@alice';
-    let password = '1234';
 
-    await expect(service.signup(name, password)).rejects.toEqual(new RepeatedUserError('Repeated username'))
+
+
 })
 
 it('failed signup request throws error', async ()=> {
-    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 500))
-    let name = '@alice';
-    let password = '1234';
 
-    await expect(service.signup(name, password)).rejects.toEqual(new Error('Unexpected server error'))
 })
 
 

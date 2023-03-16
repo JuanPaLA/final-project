@@ -7,6 +7,7 @@ import com.proyecto404.finalProjectJP.core.domain.Post
 import com.proyecto404.finalProjectJP.core.domain.User
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryPosts
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRelationships
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 import com.proyecto404.finalProjectJP.http.HttpApplication
 import io.restassured.module.kotlin.extensions.Extract
@@ -101,6 +102,26 @@ class TwitterE2ETest {
         }
     }
 
+    @Test
+    fun follow() {
+        Given {
+            val juan = User("@juan", "1234")
+            juan.addToken(SessionToken("aToken"))
+            val bob = User("@bob", "1234")
+            users.add(juan)
+            users.add(bob)
+            posts.add(Post(1, "@bob", "What a beautiful day!"))
+            posts.add(Post(2, "@bob", "Is it?"))
+            header("Authorization", "aToken")
+        } When {
+            get("$baseUrl/follow/@bob")
+        } Then {
+            statusCode(200)
+        }
+
+        assertThat(relationships.getFollowers("@bob")).isEqualTo(listOf("@juan"))
+    }
+
     @BeforeEach
     fun setup() {
         httpApp.start()
@@ -113,7 +134,8 @@ class TwitterE2ETest {
 
     private val posts = InMemoryPosts()
     private val users = InMemoryUsers()
-    private val core = Core(Configuration(users, posts))
+    private val relationships = InMemoryRelationships()
+    private val core = Core(Configuration(users, posts, relationships))
     private val config = HttpApplication.Configuration(6060, core)
     private val httpApp = HttpApplication(config)
     private val baseUrl = "http://localhost:6060";

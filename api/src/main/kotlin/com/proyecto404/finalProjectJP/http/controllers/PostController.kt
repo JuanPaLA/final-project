@@ -24,7 +24,12 @@ class PostController(private val http: Javalin, private val core: Core) {
         val posts = core.read().exec(Request(requester, author, token))
         val postsArray = Json.array()
         posts.posts.forEach {
-            postsArray.add("id: ${it.id}, content: ${it.content}, author: ${it.userId}, date: ${it.date}")
+            postsArray.add(JsonObject()
+                    .add("id", it.id)
+                    .add("content", it.content)
+                    .add("author", it.userId)
+                    .add("date", it.date.toString())
+            )
         }
         val response = JsonObject().add("posts", postsArray).toString()
         ctx.status(200).json(response)
@@ -40,7 +45,6 @@ class PostController(private val http: Javalin, private val core: Core) {
             core.post().exec(Post.Request(userName, token, content))
             ctx.status(201)
         } catch (e: InvalidUsernameError) {
-            val response = JsonObject().add("error", "Invalid username").toString()
             ctx.status(401)
         } catch (e: EmptyPostError) {
             ctx.status(400)

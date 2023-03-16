@@ -8,12 +8,13 @@ import com.proyecto404.finalProjectJP.console.session.SessionPrinter
 import com.proyecto404.finalProjectJP.console.session.SessionState
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryPosts
+import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryRelationships
 import com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory.InMemoryUsers
 
 class ConsoleApp(input: Input, output: Output) {
     var session = SessionState()
     private val prompt = SessionPrinter(session)
-    private val core = Core(Core.Configuration(InMemoryUsers(), InMemoryPosts()))
+    private val core = Core(Core.Configuration(InMemoryUsers(), InMemoryPosts(), InMemoryRelationships()))
     private val handlers = listOf(
         SignUpHandler(output, core),
         LoginHandler(output, core, session),
