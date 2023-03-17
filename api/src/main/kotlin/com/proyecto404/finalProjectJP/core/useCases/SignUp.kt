@@ -1,7 +1,7 @@
 package com.proyecto404.finalProjectJP.core.useCases
 
 import com.proyecto404.finalProjectJP.core.domain.User
-import com.proyecto404.finalProjectJP.core.domain.Users
+import com.proyecto404.finalProjectJP.core.domain.repositories.Users
 import com.proyecto404.finalProjectJP.core.domain.services.AuthService
 
 class SignUp(private val users: Users) {

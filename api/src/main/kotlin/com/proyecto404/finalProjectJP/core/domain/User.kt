@@ -1,9 +1,10 @@
 package com.proyecto404.finalProjectJP.core.domain
 
-import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
+import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 
-class User (val name: String, val password: String){
+class User(val name: String, val password: String) {
+
     private val tokens: MutableList<SessionToken> = mutableListOf()
 
     fun addToken(token: SessionToken) {
@@ -32,4 +33,24 @@ class User (val name: String, val password: String){
         result = 31 * result + password.hashCode()
         return result
     }
+
+    fun snapshot(): UserSnapshot {
+        return UserSnapshot(id, name, password, sessionToken()?.toString())
+    }
+
+    private fun sessionToken(): SessionToken? {
+        return if (tokens.isEmpty()) null else tokens.last()
+    }
+
+    companion object {
+        fun from(snapshot: UserSnapshot): User {
+            return User(snapshot.id, snapshot.name, snapshot.password)
+                .also {
+//                    it.id = snapshot.id
+                    if (snapshot.sessionToken != null) it.addToken(SessionToken(snapshot.sessionToken))
+                }
+        }
+    }
+
+    data class UserSnapshot(var id: Int, val name: String, val password: String, val sessionToken: String?)
 }

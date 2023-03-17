@@ -1,4 +1,6 @@
-package com.proyecto404.finalProjectJP.core.domain
+package com.proyecto404.finalProjectJP.core.domain.repositories
+
+import com.proyecto404.finalProjectJP.core.domain.Post
 
 interface Posts {
     fun nextId(): Int
@@ -8,3 +10,5 @@ interface Posts {
     fun add(post: Post)
     fun remove(postId: Int)
 }
+
+fun RepositoryProvider.posts() = this.get<Posts>()

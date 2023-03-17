@@ -1,7 +1,7 @@
 package com.proyecto404.finalProjectJP.core.infraestructure.persistence.inMemory
 
 import com.proyecto404.finalProjectJP.core.domain.Relationship
-import com.proyecto404.finalProjectJP.core.domain.Relationships
+import com.proyecto404.finalProjectJP.core.domain.repositories.Relationships
 
 class InMemoryRelationships: Relationships {
     private val relationships = mutableMapOf<String, MutableSet<String>>()

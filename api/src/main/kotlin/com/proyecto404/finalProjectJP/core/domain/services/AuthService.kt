@@ -8,11 +8,12 @@ import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidPasswordErro
 import com.proyecto404.finalProjectJP.core.domain.exceptions.InvalidUsernameError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
 import com.proyecto404.finalProjectJP.core.useCases.Login.*
+import org.eclipse.jetty.util.security.Password
 
 class AuthService {
     private val ARGS_MIN_LENGTH = 4
 
-    fun checkCredentials(user: User) {
+    fun checkCredentials(name: String, password: String) {
         if (user.name.isEmpty()) throw InvalidUsernameError()
         if (user.password.isEmpty()) throw InvalidPasswordError()
         if (user.name.first().toString() != "@") throw InvalidUsernameError()

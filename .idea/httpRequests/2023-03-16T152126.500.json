@@ -1,0 +1,11 @@
+{
+  "empty": false,
+  "object": true,
+  "array": false,
+  "null": false,
+  "number": false,
+  "boolean": false,
+  "false": false,
+  "true": false,
+  "string": false
+}
