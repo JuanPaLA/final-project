@@ -1,13 +1,9 @@
 import {WebAppServices} from "@/ui/WebApp";
-import {HomePresenter} from "@/ui/screens/home/HomePresenter";
 import {UserPresenter} from "@/ui/screens/user/UserPresenter";
 import {useAppPresenter} from "@/ui/lib/presenters/useAppPresenter";
-import Header from "@/ui/layout/Header";
 import React from "react";
-import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 import styled from "styled-components";
-import {colors} from "@/ui/layout/styles/Globals";
-
+import {colors, Container, StyledContainer} from "@/ui/layout/styles/Globals";
 
 const userPresenter = (onChange, services: WebAppServices) => new UserPresenter(
     onChange,
@@ -19,31 +15,35 @@ const userPresenter = (onChange, services: WebAppServices) => new UserPresenter(
 export const UserScreen = ({user}) => {
     const presenter = useAppPresenter(userPresenter)
 
-    return(
-        <>
+    return (
+        <StyledContainer>
             <StyledNav>
-                <SecondaryButton
-                    onClick={() => presenter.navigateToHome()}
-                    value={"Home"}
-                />
-                <h1>{user}</h1>
-            </StyledNav>
 
-            {presenter.model.posts.length > 0 && (
-                <div>
+            </StyledNav>
+            <Container>
+                {presenter.model.posts.length > 0 && (
+                <PostList>
                     {presenter.model.posts.map((post, i) => (
-                        <div key={i}>
-                            {post.content}
-                        </div>
+                        <Post key={i}>
+                            {post.author}: {post.content} - {post.date}
+                        </Post>
                     ))}
-                </div>
-            )}
-           </>
+                </PostList>
+                )}
+            </Container>
+            <StyledNav></StyledNav>
+        </StyledContainer>
     )
 }
 
+const PostList = styled.div`
+    display: grid;
+    margin-top: 4vh;
+    justify-content: flex-start;
+`
+
 const Post = styled.div`
-    color: aliceblue;
+  color: aliceblue;
 `
 
 const StyledNav = styled.nav`

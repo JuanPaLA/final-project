@@ -11,6 +11,7 @@ import {SessionState} from "@/session/SessionState";
 import {Post} from "@/core/useCases/Post";
 import {HttpPostService} from "@/core/infrastructure/HttpPostService";
 import {Read} from "@/core/useCases/Read";
+import {Header} from "@/ui/layout/header/Header";
 
 export class WebApp {
     private readonly services: WebAppServices
@@ -24,6 +25,7 @@ export class WebApp {
     render(Page, pageProps) {
         return <>
             <AppServicesProvider services={this.services}>
+                <Header />
                 <Page {...pageProps} />
             </AppServicesProvider>
         </>

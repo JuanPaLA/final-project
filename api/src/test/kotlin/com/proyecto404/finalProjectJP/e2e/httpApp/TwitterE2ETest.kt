@@ -69,7 +69,7 @@ class TwitterE2ETest {
             header("Authorization", "aToken")
             body(
                 JsonObject()
-                    .add("userName", "@alice")
+                    .add("username", "@alice")
                     .add("content", "What a beautiful day!")
                     .toString()
             )
@@ -93,6 +93,7 @@ class TwitterE2ETest {
             posts.add(Post(1, "@bob", "What a beautiful day!"))
             posts.add(Post(2, "@bob", "Is it?"))
             header("Authorization", "aToken")
+            header("Requester", "@juan")
         } When {
             get("$baseUrl/posts/@bob")
         } Then {
@@ -106,17 +107,21 @@ class TwitterE2ETest {
     fun follow() {
         Given {
             val juan = User("@juan", "1234")
-            juan.addToken(SessionToken("aToken"))
             val bob = User("@bob", "1234")
+            juan.addToken(SessionToken("aToken"))
             users.add(juan)
             users.add(bob)
-            posts.add(Post(1, "@bob", "What a beautiful day!"))
-            posts.add(Post(2, "@bob", "Is it?"))
             header("Authorization", "aToken")
+            body(
+                JsonObject()
+                    .add("requester", "@juan")
+                    .add("followee", "@bob")
+                    .toString()
+            )
         } When {
-            get("$baseUrl/follow/@bob")
+            post("$baseUrl/follow")
         } Then {
-            statusCode(200)
+            statusCode(201)
         }
 
         assertThat(relationships.getFollowers("@bob")).isEqualTo(listOf("@juan"))

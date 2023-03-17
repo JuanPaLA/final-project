@@ -4,7 +4,6 @@ import {anything, instance, mock, verify, when} from "ts-mockito";
 import {SessionState} from "@/session/SessionState";
 import {Post} from "@/core/useCases/Post";
 import {expect} from "expect";
-import {UserSession} from "@/session/UserSession";
 import {mockEq} from "../../common/ts-mockito-extensions";
 
 it('logout navigates to signup', () => {

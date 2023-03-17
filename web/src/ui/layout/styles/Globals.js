@@ -40,10 +40,6 @@ export const Container = styled.div`
   }
 `
 
-export const StyledForm = styled.form`
-  padding: 4vh;
-`
-
 export const FormControl = styled.div`
     margin-bottom: 10px;
 `
@@ -53,12 +49,41 @@ export const StyledAnchor = styled.a`
     color: dodgerblue;
 `
 
+export const StyledContainer = styled.div`
+    display: grid;   
+    background-color: ${colors.black};
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100vw;
+    height: 100vh;
+  align-items: flex-start;
+`
+
 export const StyledMain = styled.div `
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: ${colors.black};
   height: 100vh;
-  width: 100vw;
-  color: ${colors.white}
+  color: ${colors.white};
+  border: ${colors.lightGray} solid 1px;
 `
+
+export const StyledNav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: ${colors.black};
+  color: ${colors.white};
+  padding: 3vw 1vh;
+`
+
+// export const StyledMain = styled.div `
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+//   background-color: ${colors.black};
+//   height: 100vh;
+//   width: 100%;
+//   color: ${colors.white}
+//   border: ${colors.lightGray} solid 1px;
+// `

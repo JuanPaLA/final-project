@@ -3,6 +3,7 @@ import {ChangeFunc} from "@/ui/lib/presenters/ChangeFunc";
 import {Router} from "@/ui/services/router/Router";
 import {SessionState} from "@/session/SessionState";
 import {Post} from "@/core/useCases/Post";
+import {PostVM} from "@/ui/viewModels/PostVM";
 
 export class HomePresenter extends DefaultPresenter<HomeVM> {
     constructor(
@@ -12,7 +13,7 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
         private router: Router
     ) {
         super(onChange);
-        this.model = { content: '' }
+        this.model = { content: '', posts: [] }
     }
 
     start() { }
@@ -61,4 +62,5 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
 
 interface HomeVM {
     content: string
+    posts: PostVM[]
 }
