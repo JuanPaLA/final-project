@@ -1,7 +1,7 @@
 import {WebAppServices} from '@/ui/WebApp'
 import {SignUpPresenter} from '@/ui/screens/signUp/SignUpPresenter'
 import {useAppPresenter} from '@/ui/lib/presenters/useAppPresenter'
-import {Container, FormControl, StyledAnchor, StyledContainer, StyledNav} from '@/ui/layout/styles/Globals.js'
+import {FormControl, StyledContainer, StyledMain, StyledNav} from '@/ui/layout/styles/Globals.js'
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 
 const signUpPresenter = (onChange, services: WebAppServices) =>
@@ -12,7 +12,7 @@ export const SignUpScreen = () => {
     return (
         <StyledContainer>
             <StyledNav></StyledNav>
-            <Container>
+            <StyledMain>
                 <FormControl>
                     <h1>Signup</h1>
                     <FormControl>
@@ -34,7 +34,7 @@ export const SignUpScreen = () => {
                     onClick={() => presenter.navigateToLogin()}
                     value={"Login"}
                 />
-            </Container>
+            </StyledMain>
             <StyledNav></StyledNav>
         </StyledContainer>
     )

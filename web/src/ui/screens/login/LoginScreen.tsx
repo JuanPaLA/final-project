@@ -1,6 +1,6 @@
 import {WebAppServices} from "@/ui/WebApp";
 import {useAppPresenter} from "@/ui/lib/presenters/useAppPresenter";
-import {Container, FormControl, StyledAnchor, StyledContainer, StyledNav} from "@/ui/layout/styles/Globals";
+import {Container, FormControl, StyledAnchor, StyledContainer, StyledMain, StyledNav} from "@/ui/layout/styles/Globals";
 import {LoginPresenter} from "@/ui/screens/login/LoginPresenter";
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 
@@ -11,7 +11,7 @@ export const LoginScreen = () => {
     return (
         <StyledContainer>
             <StyledNav></StyledNav>
-            <Container>
+            <StyledMain>
                 <FormControl>
                     <h1>Login</h1>
                     <FormControl>
@@ -31,7 +31,7 @@ export const LoginScreen = () => {
                     onClick={() => presenter.navigateToCreate()}
                     value={"Create account"}
                 />
-            </Container>
+            </StyledMain>
             <StyledNav></StyledNav>
         </StyledContainer>
     )

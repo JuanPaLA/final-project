@@ -10,6 +10,7 @@ import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.domain.Post
 import com.proyecto404.finalProjectJP.core.domain.services.PostService
 import com.proyecto404.finalProjectJP.core.useCases.Wall.Request
+import java.time.LocalDateTime
 import java.util.*
 
 class WallHandler(private val output: Output, private val core: Core, private val session: SessionState) : CommandHandler {
@@ -38,7 +39,7 @@ class WallHandler(private val output: Output, private val core: Core, private va
         else output.println("ERROR: No posts in your timeline")
     }
 
-    private fun stringPassedTime(date: Date): String {
+    private fun stringPassedTime(date: LocalDateTime): String {
         val timePassed = postService.calculateTimePassedFromPosting(date)
         val hours = timePassed.toHours()
         val minutes = timePassed.toMinutes()

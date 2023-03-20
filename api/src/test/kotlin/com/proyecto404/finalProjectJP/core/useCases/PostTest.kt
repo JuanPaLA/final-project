@@ -56,7 +56,7 @@ class PostTest {
 
     private val otherToken = SessionToken("otherToken")
     private val aToken = SessionToken("aToken")
-    private val alice = User("@alice", "1234")
+    private val alice = User(1, "@alice", "1234")
     private val posts = InMemoryPosts()
     private val users = mockk<InMemoryUsers>()
     private val auth = AuthService()

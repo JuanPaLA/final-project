@@ -11,17 +11,17 @@ import org.junit.jupiter.api.assertThrows
 class InMemoryUsersTest {
     @Test
     fun `add creates a new user`() {
-        users.add(User("@alice", "1234"))
+        users.add(User(1, "@alice", "1234"))
 
-        assertThat(users.get("@alice")).isEqualTo(User("@alice", "1234"))
+        assertThat(users.get("@alice")).isEqualTo(User(1, "@alice", "1234"))
     }
 
     @Test
     fun `users with repeated username can not be created`() {
-        users.add(User("@alice", "1234"))
+        users.add(User(1, "@alice", "1234"))
 
         assertThrows<RepeatedUsernameError> {
-            users.add(User("@alice", "1234"))
+            users.add(User(1, "@alice", "1234"))
         }
     }
 
@@ -44,14 +44,14 @@ class InMemoryUsersTest {
 
     @Test
     fun `updates change user properties`() {
-        users.add(User("@alice", "1234"))
-        users.update(User("@alice", "4444"))
+        users.add(User(1, "@alice", "1234"))
+        users.update(User(1, "@alice", "4444"))
 
         val newUser = users.get("@alice")
 
-        assertThat(newUser).isEqualTo(User("@alice", "4444"))
+        assertThat(newUser).isEqualTo(User(1, "@alice", "4444"))
     }
 
     private val users = InMemoryUsers()
-    private val alice = User("@alice", "1234")
+    private val alice = User(1, "@alice", "1234")
 }

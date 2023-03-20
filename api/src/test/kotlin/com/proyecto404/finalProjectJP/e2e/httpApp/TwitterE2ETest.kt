@@ -34,14 +34,14 @@ class TwitterE2ETest {
             post("$baseUrl/users")
         } Then {
             statusCode(201)
-            assertThat(users.get("@alice")).isEqualTo(User("@alice", "1234"))
+            assertThat(users.get("@alice")).isEqualTo(User(1,"@alice", "1234"))
         }
     }
 
     @Test
     fun login() {
         val sessionToken: String = Given {
-            users.add(User("@alice", "1234"))
+            users.add(User(1, "@alice", "1234"))
             body(
                 JsonObject()
                     .add("name", "@alice")
@@ -63,7 +63,7 @@ class TwitterE2ETest {
     @Test
     fun post() {
         Given {
-            val alice = User("@alice", "1234")
+            val alice = User(1, "@alice", "1234")
             alice.addToken(SessionToken("aToken"))
             users.add(alice)
             header("Authorization", "aToken")
@@ -85,9 +85,9 @@ class TwitterE2ETest {
     @Test
     fun read() {
         Given {
-            val juan = User("@juan", "1234")
+            val juan = User(1, "@juan", "1234")
             juan.addToken(SessionToken("aToken"))
-            val bob = User("@bob", "1234")
+            val bob = User(2, "@bob", "1234")
             users.add(juan)
             users.add(bob)
             posts.add(Post(1, "@bob", "What a beautiful day!"))
@@ -106,25 +106,44 @@ class TwitterE2ETest {
     @Test
     fun follow() {
         Given {
-            val juan = User("@juan", "1234")
-            val bob = User("@bob", "1234")
+            val juan = User(1, "@juan", "1234")
+            val bob = User(2, "@bob", "1234")
             juan.addToken(SessionToken("aToken"))
             users.add(juan)
             users.add(bob)
             header("Authorization", "aToken")
             body(
                 JsonObject()
-                    .add("requester", "@juan")
+                    .add("follower", "@juan")
                     .add("followee", "@bob")
                     .toString()
             )
         } When {
-            post("$baseUrl/follow")
+            post("$baseUrl/follows")
         } Then {
             statusCode(201)
         }
 
         assertThat(relationships.getFollowers("@bob")).isEqualTo(listOf("@juan"))
+    }
+
+    @Test
+    fun getUsers() {
+        Given {
+            val juan = User(1, "@juan", "1234")
+            val bob = User(2, "@bob", "1234")
+            juan.addToken(SessionToken("aToken"))
+            users.add(juan)
+            users.add(bob)
+            header("Authorization", "aToken")
+            header("Requester", "@juan")
+        } When {
+            get("$baseUrl/users")
+        } Then {
+            statusCode(200)
+            body("users", CoreMatchers.notNullValue())
+            body("users.size()", CoreMatchers.equalTo(2))
+        }
     }
 
     @BeforeEach

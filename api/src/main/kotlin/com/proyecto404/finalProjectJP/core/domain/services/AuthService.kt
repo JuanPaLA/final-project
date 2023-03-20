@@ -14,17 +14,17 @@ class AuthService {
     private val ARGS_MIN_LENGTH = 4
 
     fun checkCredentials(name: String, password: String) {
-        if (user.name.isEmpty()) throw InvalidUsernameError()
-        if (user.password.isEmpty()) throw InvalidPasswordError()
-        if (user.name.first().toString() != "@") throw InvalidUsernameError()
-        if (user.name.length < ARGS_MIN_LENGTH) throw InvalidUsernameError()
-        if (user.password.length < ARGS_MIN_LENGTH) throw InvalidPasswordError()
+        if (name.isEmpty()) throw InvalidUsernameError()
+        if (password.isEmpty()) throw InvalidPasswordError()
+        if (name.first().toString() != "@") throw InvalidUsernameError()
+        if (name.length < ARGS_MIN_LENGTH) throw InvalidUsernameError()
+        if (password.length < ARGS_MIN_LENGTH) throw InvalidPasswordError()
     }
 
     fun generateSessionToken(user: User) = SessionToken(user.name.reversed())
 
     fun isValidCredentialRequest(request: Request, user: User): Boolean {
-        if (User(request.userName, request.password) != user) throw InvalidLoginCredentialsError()
+        if ( request.userName != user.name || request.password != user.password ) throw InvalidLoginCredentialsError()
         else return true
     }
 

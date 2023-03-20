@@ -1,5 +1,7 @@
-import {UserResponse} from "@/core/infrastructure/http/HttpResponse";
+import {HttpResponse, ReadResponse, UserResponse, UsersListResponse} from "@/core/infrastructure/http/HttpResponse";
 
 export interface UserService {
-    signup(name: string, password: string): Promise<any>
+    createUser(name: string, password: string): Promise<any>
+
+    getUsers(name: string, token: string): Promise<HttpResponse<UsersListResponse>>
 }

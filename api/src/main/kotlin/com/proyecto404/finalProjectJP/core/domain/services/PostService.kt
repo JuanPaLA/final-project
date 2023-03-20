@@ -3,6 +3,7 @@ package com.proyecto404.finalProjectJP.core.domain.services
 import com.proyecto404.finalProjectJP.core.domain.exceptions.EmptyPostError
 import com.proyecto404.finalProjectJP.core.domain.exceptions.PostMaxedLengthError
 import java.time.Duration
+import java.time.LocalDateTime
 import java.util.*
 
 class PostService {
@@ -16,10 +17,7 @@ class PostService {
         else return true
     }
 
-    fun calculateTimePassedFromPosting(date: Date): Duration {
-        val currentTime = System.currentTimeMillis()
-        val dateTime = date.time
-        val long = currentTime - dateTime
-        return Duration.ofMillis(long)
+    fun calculateTimePassedFromPosting(postDate: LocalDateTime): Duration {
+        return Duration.between(postDate, LocalDateTime.now())
     }
 }

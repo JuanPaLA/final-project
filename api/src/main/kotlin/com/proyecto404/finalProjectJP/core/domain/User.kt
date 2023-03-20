@@ -3,7 +3,7 @@ package com.proyecto404.finalProjectJP.core.domain
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotAuthenticatedError
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 
-class User(val name: String, val password: String) {
+class User(val id: Int = 1, val name: String, val password: String) {
 
     private val tokens: MutableList<SessionToken> = mutableListOf()
 

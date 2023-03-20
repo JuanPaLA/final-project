@@ -30,4 +30,8 @@ class InMemoryUsers: Users {
     }
 
     override fun get(userName: String) = users.singleOrNull { it.name == userName } ?: throw UserNotFoundError()
+
+    override fun get(): List<User> {
+        return this.users
+    }
 }

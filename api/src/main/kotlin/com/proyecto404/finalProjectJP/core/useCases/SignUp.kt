@@ -9,8 +9,8 @@ class SignUp(private val users: Users) {
     fun exec(request: Request) {
         val userName = request.userName
         val password = request.password
-        authService.checkCredentials(User(userName, password))
-        users.add(User(userName, password))
+        authService.checkCredentials(userName, password)
+        users.add(User(users.nextId(), userName, password))
     }
 
     data class Request(val userName: String, val password: String)

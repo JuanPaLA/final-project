@@ -5,7 +5,7 @@ import {UserService} from "@/core/model/UserService";
 it('signup request service with given username and password', () => {
     signup.exec("@alice", "1234")
 
-    verify(service.signup("@alice", "1234")).once()
+    verify(service.createUser("@alice", "1234")).once()
 })
 
 beforeEach(() => {

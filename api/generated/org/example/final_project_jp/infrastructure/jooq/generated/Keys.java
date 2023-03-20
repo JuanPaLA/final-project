@@ -5,8 +5,12 @@ package org.example.final_project_jp.infrastructure.jooq.generated;
 
 
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.FlywaySchemaHistory;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Follows;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Posts;
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.Users;
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.records.FlywaySchemaHistoryRecord;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.records.FollowsRecord;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.records.PostsRecord;
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.records.UsersRecord;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
@@ -26,5 +30,7 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<FlywaySchemaHistoryRecord> FLYWAY_SCHEMA_HISTORY_PK = Internal.createUniqueKey(FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, DSL.name("flyway_schema_history_pk"), new TableField[] { FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.INSTALLED_RANK }, true);
+    public static final UniqueKey<FollowsRecord> FOLLOWS_PKEY = Internal.createUniqueKey(Follows.FOLLOWS, DSL.name("follows_pkey"), new TableField[] { Follows.FOLLOWS.ID }, true);
+    public static final UniqueKey<PostsRecord> POSTS_PKEY = Internal.createUniqueKey(Posts.POSTS, DSL.name("posts_pkey"), new TableField[] { Posts.POSTS.ID }, true);
     public static final UniqueKey<UsersRecord> USERS_PKEY = Internal.createUniqueKey(Users.USERS, DSL.name("users_pkey"), new TableField[] { Users.USERS.ID }, true);
 }

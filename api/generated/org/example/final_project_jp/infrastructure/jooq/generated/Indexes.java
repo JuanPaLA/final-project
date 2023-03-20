@@ -5,6 +5,8 @@ package org.example.final_project_jp.infrastructure.jooq.generated;
 
 
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.FlywaySchemaHistory;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Follows;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Posts;
 import org.jooq.Index;
 import org.jooq.OrderField;
 import org.jooq.impl.DSL;
@@ -22,4 +24,6 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     public static final Index FLYWAY_SCHEMA_HISTORY_S_IDX = Internal.createIndex(DSL.name("flyway_schema_history_s_idx"), FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, new OrderField[] { FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.SUCCESS }, false);
+    public static final Index FOLLOWS_ID_UQ = Internal.createIndex(DSL.name("follows_id_uq"), Follows.FOLLOWS, new OrderField[] { Follows.FOLLOWS.ID }, true);
+    public static final Index POSTS_ID_UQ = Internal.createIndex(DSL.name("posts_id_uq"), Posts.POSTS, new OrderField[] { Posts.POSTS.ID }, true);
 }

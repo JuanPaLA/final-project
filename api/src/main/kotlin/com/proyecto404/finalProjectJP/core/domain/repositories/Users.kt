@@ -5,6 +5,7 @@ import com.proyecto404.finalProjectJP.core.domain.User
 interface Users {
     fun add(user: User)
     fun get(userName: String): User
+    fun get(): List<User>
     fun delete(userName: String)
     fun update(user: User)
     fun nextId(): Int

@@ -1,8 +1,9 @@
 package com.proyecto404.finalProjectJP.core.domain
 
+import java.time.LocalDateTime
 import java.util.Date
 
-class Post(val id: Int, val userId: String, val content: String, val date: Date = Date()) {
+class Post(val id: Int, val userId: String, val content: String, val date: LocalDateTime = LocalDateTime.now()) {
 
 
     override fun equals(other: Any?): Boolean {

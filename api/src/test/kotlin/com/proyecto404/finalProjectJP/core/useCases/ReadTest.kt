@@ -62,7 +62,7 @@ class ReadTest {
         every { authService.validateToken(any(), any()) } returns true
     }
 
-    private val alice = UserEntity("@alice", "1234")
+    private val alice = UserEntity(1, "@alice", "1234")
     private val posts = InMemoryPosts()
     private val users = InMemoryUsers()
     private val authService = mockk<AuthService>()

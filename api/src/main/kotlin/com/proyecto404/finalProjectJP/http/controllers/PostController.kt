@@ -6,8 +6,7 @@ import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.domain.exceptions.*
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.useCases.Post
-import com.proyecto404.finalProjectJP.core.useCases.Read
-import com.proyecto404.finalProjectJP.core.useCases.Read.*
+import com.proyecto404.finalProjectJP.core.useCases.Read.Request
 import io.javalin.Javalin
 import io.javalin.http.Context
 
@@ -55,7 +54,8 @@ class PostController(private val http: Javalin, private val core: Core) {
         } catch (e: UserNotAuthenticatedError) {
             ctx.status(403)
         } catch (e: Exception) {
-            ctx.status(500)
+            val response = JsonObject().add("error", e.message).toString()
+            ctx.status(500).json(response)
         }
     }
 

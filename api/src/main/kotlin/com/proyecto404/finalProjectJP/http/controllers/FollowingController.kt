@@ -7,18 +7,18 @@ import com.proyecto404.finalProjectJP.core.useCases.Follow
 import io.javalin.Javalin
 import io.javalin.http.Context
 
-class FollowController(private val http: Javalin, private val core: Core) {
+class FollowingController(private val http: Javalin, private val core: Core) {
     init {
-        http.post("/follow", ::follow)
+        http.post("/follows", ::follow)
     }
 
     private fun follow(ctx: Context) {
         val json = getJsonFrom(ctx)
-        val requester = json.get("requester").asString()
+        val follower = json.get("follower").asString()
         val followee = json.get("followee").asString()
         val sessionToken = ctx.req.getHeader("Authorization")
         val token = SessionToken(sessionToken)
-        core.follow().exec(Follow.Request(requester, followee, token))
+        core.follow().exec(Follow.Request(follower, followee, token))
         ctx.status(201)
     }
 

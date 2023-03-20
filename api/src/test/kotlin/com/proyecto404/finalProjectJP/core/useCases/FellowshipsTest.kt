@@ -97,9 +97,9 @@ class FellowshipsTest {
         every { authService.validateToken(any(), any()) } returns true
     }
 
-    private val alice = User("@alice", "1234")
-    private val juan = User("@juan", "1234")
-    private val bob = User("@bob", "1234")
+    private val alice = User(1, "@alice", "1234")
+    private val juan = User(2, "@juan", "1234")
+    private val bob = User(3, "@bob", "1234")
     private val aToken = SessionToken("a token")
     private val users = InMemoryUsers()
     private val authService = mockk<AuthService>()

@@ -59,7 +59,7 @@ class WallHandlerTest {
     @BeforeEach
     fun setup() {
         every { core.wall() } returns wall
-        users.add(UserEntity("@alice", "1234"))
+        users.add(UserEntity(1, "@alice", "1234"))
         session.authenticate(User("@alice", aToken))
     }
 

@@ -1,5 +1,6 @@
 import { HttpMethod } from './HttpMethod'
 import { Post } from "@/core/useCases/Post";
+import {UserVM} from "@/ui/viewModels/UserVM";
 
 export interface HttpResponse<T> {
     method: HttpMethod;
@@ -30,4 +31,8 @@ export interface ReadResponse {
 
 export interface UserResponse {
     error?: string
+}
+
+export interface UsersListResponse {
+    users: UserVM[]
 }

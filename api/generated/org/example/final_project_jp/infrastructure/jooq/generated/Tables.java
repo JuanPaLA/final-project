@@ -5,6 +5,8 @@ package org.example.final_project_jp.infrastructure.jooq.generated;
 
 
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.FlywaySchemaHistory;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Follows;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Posts;
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.Users;
 
 
@@ -18,6 +20,16 @@ public class Tables {
      * The table <code>public.flyway_schema_history</code>.
      */
     public static final FlywaySchemaHistory FLYWAY_SCHEMA_HISTORY = FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY;
+
+    /**
+     * The table <code>public.follows</code>.
+     */
+    public static final Follows FOLLOWS = Follows.FOLLOWS;
+
+    /**
+     * The table <code>public.posts</code>.
+     */
+    public static final Posts POSTS = Posts.POSTS;
 
     /**
      * The table <code>public.users</code>.

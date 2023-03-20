@@ -4,22 +4,26 @@ import {HttpClient} from "@/core/infrastructure/http/HttpClient";
 import {mockEq} from "../../../common/ts-mockito-extensions";
 import {UserService} from "@/core/model/UserService";
 import {FakeHttpResponse} from "./FakeHttpResponse";
-import {expect} from "expect";
-import {RepeatedUserError} from "@/core/infrastructure/RepeatedUserError";
 
-it('valid signup sends name and password', async () => {
+it('signup request sends name and password', async () => {
     when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 201))
     let name = '@alice';
     let password = '1234';
 
-    await service.signup(name, password)
+    await service.createUser(name, password)
 
     verify(client.post('/users', {name, password})).called()
 })
 
+it('get users', async ()=> {
+    when(client.get(anything(), anything())).thenResolve(new FakeHttpResponse({users: []}, 200))
+
+    await service.getUsers(anything(), anything())
+
+    verify(client.get('/users', anything())).called()
+})
+
 it('users can not be created with repeated names', async ()=> {
-
-
 
 })
 

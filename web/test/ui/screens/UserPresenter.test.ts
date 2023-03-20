@@ -15,7 +15,7 @@ it('posts starts empty', () => {
     expect(presenter.model.posts).toEqual(null)
 })
 
-it('posts are fetched on mounting', async () => {
+it('users posts are fetched on mounting', async () => {
     when(session.getSession()).thenReturn({name: "alice", token: "1234"})
 
     await presenter.start()

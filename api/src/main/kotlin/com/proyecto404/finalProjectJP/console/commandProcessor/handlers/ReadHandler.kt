@@ -8,6 +8,7 @@ import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.domain.exceptions.UserNotFoundError
 import com.proyecto404.finalProjectJP.core.domain.services.PostService
 import com.proyecto404.finalProjectJP.core.useCases.Read
+import java.time.LocalDateTime
 import java.util.*
 
 class ReadHandler(private val output: Output, private val core: Core, private val session: SessionState) : CommandHandler {
@@ -37,7 +38,7 @@ class ReadHandler(private val output: Output, private val core: Core, private va
         } else output.println("ERROR: There are no post from $author")
     }
 
-    private fun stringPassedTime(date: Date): String {
+    private fun stringPassedTime(date: LocalDateTime): String {
         val timePassed = postService.calculateTimePassedFromPosting(date)
         val hours = timePassed.toHours()
         val minutes = timePassed.toMinutes()

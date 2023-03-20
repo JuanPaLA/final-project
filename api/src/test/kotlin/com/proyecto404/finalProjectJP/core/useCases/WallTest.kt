@@ -48,9 +48,9 @@ class WallTest {
         every { authService.validateToken(any(), any()) } returns true
     }
 
-    private val alice = User("@alice", "1234")
-    private val bob = User("@bob", "1234")
-    private val juan = User("@juan", "1234")
+    private val alice = User(1,"@alice", "1234")
+    private val bob = User(2, "@bob", "1234")
+    private val juan = User(3, "@juan", "1234")
     private val posts = InMemoryPosts()
     private val users = InMemoryUsers()
     private val relationships = InMemoryRelationships()

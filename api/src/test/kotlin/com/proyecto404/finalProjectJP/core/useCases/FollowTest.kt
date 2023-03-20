@@ -60,9 +60,9 @@ class FollowTest {
 
     @BeforeEach
     fun setup() {
-        users.add(User("@alice", "1234"))
-        users.add(User("@bob", "1234"))
-        users.add(User("@juan", "1234"))
+        users.add(User(1, "@alice", "1234"))
+        users.add(User(2, "@bob", "1234"))
+        users.add(User(3, "@juan", "1234"))
         every { authService.validateToken(any(), any()) } returns true
     }
 

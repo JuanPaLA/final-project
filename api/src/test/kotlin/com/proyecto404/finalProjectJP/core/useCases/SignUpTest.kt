@@ -15,7 +15,7 @@ class SignUpTest {
     fun `signup creates new user`() {
         signup.exec(Request("@alice", "1234"))
 
-        assertThat(users.get("@alice")).isEqualTo(User("@alice", "1234"))
+        assertThat(users.get("@alice")).isEqualTo(User(1, "@alice", "1234"))
     }
 
     @Test

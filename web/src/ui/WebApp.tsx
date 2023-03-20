@@ -12,6 +12,9 @@ import {Post} from "@/core/useCases/Post";
 import {HttpPostService} from "@/core/infrastructure/HttpPostService";
 import {Read} from "@/core/useCases/Read";
 import {Header} from "@/ui/layout/header/Header";
+import {GetUsers} from "@/core/useCases/GetUsers";
+import {HttpFollowingService} from "@/core/infrastructure/HttpFollowingService";
+import {Follow} from "@/core/useCases/Follow";
 
 export class WebApp {
     private readonly services: WebAppServices
@@ -38,7 +41,9 @@ export interface WebAppConfig {
     login: Login,
     session: SessionState,
     post: Post,
-    read: Read
+    read: Read,
+    listUsers: GetUsers,
+    follow: Follow
 }
 
 export interface WebAppServices extends WebAppConfig {
@@ -46,15 +51,20 @@ export interface WebAppServices extends WebAppConfig {
 
 export const defaultWebAppConfig = (): WebAppConfig => {
     let session = new BrowserSession()
-    let auth = new HttpAuthService(new AxiosHttpClient('http://localhost:8080/'), session)
-    let postService = new HttpPostService(new AxiosHttpClient('http://localhost:8080/'))
+    let client = new AxiosHttpClient('http://localhost:8080/')
+    let auth = new HttpAuthService(client, session)
+    let postService = new HttpPostService(client)
+    let userService = new HttpUserService(client)
+    let followingService = new HttpFollowingService(client)
 
     return {
-        router: new NextJsRouter(),
-        signup: new Signup(new HttpUserService(new AxiosHttpClient('http://localhost:8080/'))),
+        listUsers: new GetUsers(userService),
         login: new Login(auth),
-        session: session,
         post: new Post(postService),
-        read: new Read(postService)
+        read: new Read(postService),
+        router: new NextJsRouter(),
+        session: session,
+        signup: new Signup(userService),
+        follow: new Follow(followingService)
     }
 }

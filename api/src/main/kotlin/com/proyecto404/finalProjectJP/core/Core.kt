@@ -17,6 +17,7 @@ class Core(config: Configuration) {
     fun login() = Login(users, authService)
     fun post() = Post(posts, users, authService)
     fun read() = Read(posts, users, authService)
+    fun getUsers() = GetUsers(users, authService)
     fun follow() = Follow(relationships, users, authService)
     fun wall() = Wall(posts, users, relationships, authService)
     fun following() = Following(users, relationships, authService)

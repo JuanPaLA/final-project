@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.FlywaySchemaHistory;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Follows;
+import org.example.final_project_jp.infrastructure.jooq.generated.tables.Posts;
 import org.example.final_project_jp.infrastructure.jooq.generated.tables.Users;
 import org.jooq.Catalog;
 import org.jooq.Sequence;
@@ -34,6 +36,16 @@ public class Public extends SchemaImpl {
     public final FlywaySchemaHistory FLYWAY_SCHEMA_HISTORY = FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY;
 
     /**
+     * The table <code>public.follows</code>.
+     */
+    public final Follows FOLLOWS = Follows.FOLLOWS;
+
+    /**
+     * The table <code>public.posts</code>.
+     */
+    public final Posts POSTS = Posts.POSTS;
+
+    /**
      * The table <code>public.users</code>.
      */
     public final Users USERS = Users.USERS;
@@ -54,6 +66,8 @@ public class Public extends SchemaImpl {
     @Override
     public final List<Sequence<?>> getSequences() {
         return Arrays.asList(
+            Sequences.FOLLOWS_ID_SEQ,
+            Sequences.POSTS_ID_SEQ,
             Sequences.USERS_ID_SEQ
         );
     }
@@ -62,6 +76,8 @@ public class Public extends SchemaImpl {
     public final List<Table<?>> getTables() {
         return Arrays.asList(
             FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY,
+            Follows.FOLLOWS,
+            Posts.POSTS,
             Users.USERS
         );
     }
