@@ -7,6 +7,8 @@ import {expect} from "expect";
 import {mockEq} from "../../common/ts-mockito-extensions";
 import {GetUsers} from "@/core/useCases/GetUsers";
 import {Follow} from "@/core/useCases/Follow";
+import {Wall} from "@/core/useCases/Wall";
+import {Unfollow} from "@/core/useCases/Unfollow";
 
 it('logout navigates to signup', () => {
     when(session.isAuthenticated()).thenReturn(true)
@@ -94,13 +96,34 @@ it('follow', async() => {
     verify(follow.exec(anything(), anything(), anything())).once()
 })
 
+it('do wall request at beginning to bring timeline', async () => {
+    when(session.isAuthenticated()).thenReturn(true)
+    when(session.getSession()).thenReturn({name: "@alice", token: "aToken"})
+
+    await presenter.start()
+
+    verify(wall.exec("@alice", "aToken")).once()
+})
+
+it('do unfollow request of given user', async () => {
+    when(session.isAuthenticated()).thenReturn(true)
+    when(session.getSession()).thenReturn({name: "@alice", token: "aToken"})
+
+    await presenter.doUnfollow("@bob")
+
+    verify(unfollow.exec("@alice", "@bob", "aToken")).once()
+
+})
+
 beforeEach(() => {
     router = mock<Router>()
     post = mockEq<Post>()
     follow = mockEq<Follow>()
+    unfollow = mockEq<Unfollow>()
     listUsers = mockEq<GetUsers>()
     session = mock<SessionState>()
-    presenter = new HomePresenter(changed, instance(session), instance(post), instance(listUsers), instance(follow), instance(router))
+    wall = mockEq<Wall>()
+    presenter = new HomePresenter(changed, instance(session), instance(post), instance(listUsers), instance(follow), instance(router), instance(wall), instance(unfollow))
     longPost = "This is a really long post This is a really long post This is a really long post This is a really long post This is a really long post This is a really long post This is a really long postThis is a really long post This is a really long post"
 })
 
@@ -109,6 +132,8 @@ let presenter: HomePresenter
 let session: SessionState
 let post: Post
 let follow: Follow
+let unfollow: Unfollow
 let listUsers: GetUsers
 let longPost: string
+let wall: Wall
 const changed = () => {}

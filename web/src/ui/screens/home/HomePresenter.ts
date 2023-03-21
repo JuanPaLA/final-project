@@ -5,9 +5,10 @@ import {SessionState} from "@/session/SessionState";
 import {Post} from "@/core/useCases/Post";
 import {PostVM} from "@/ui/viewModels/PostVM";
 import {UserVM} from "@/ui/viewModels/UserVM";
-import {UserService} from "@/core/model/UserService";
 import {GetUsers} from "@/core/useCases/GetUsers";
 import {Follow} from "@/core/useCases/Follow";
+import {Wall} from "@/core/useCases/Wall";
+import {Unfollow} from "@/core/useCases/Unfollow";
 
 export class HomePresenter extends DefaultPresenter<HomeVM> {
     constructor(
@@ -16,7 +17,9 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
         private post: Post,
         private users: GetUsers,
         private follow: Follow,
-        private router: Router
+        private router: Router,
+        private wall: Wall,
+        private unfollow: Unfollow
     ) {
         super(onChange);
         this.model = {content: '', posts: [], users: []}
@@ -24,9 +27,8 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
 
     async start() {
         this.navigateToLogin();
-        if (this.model.users.length == 0) {
-            await this.getUsers()
-        }
+        await this.getUsers();
+        await this.getTimeline();
     }
 
     private navigateToLogin() {
@@ -43,6 +45,62 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
             this.setUsers(response.body.users)
         } catch (e) {
             console.log(e)
+        }
+    }
+
+    async doPost() {
+        try {
+            if (this.isPostDisabled()) return
+            if (!this.session.isAuthenticated()) return
+            let content = this.model.content
+            let {name, token} = this.session.getSession()
+            await this.post.exec(name, content, token)
+        } catch (e) {
+            if (e instanceof Error) {
+                alert(e.message)
+            }
+        }
+        this.setContent('')
+    }
+
+    async doFollow(followee: string) {
+        try {
+            if (!this.session.isAuthenticated()) return
+            let {name: follower, token} = this.session.getSession()
+            await this.follow.exec(follower, followee, token)
+            alert(`You are now following ${followee}`)
+        } catch (e) {
+            if (e instanceof Error) {
+                alert(e.message)
+            }
+        }
+        this.setContent('')
+    }
+
+    async doUnfollow(followee: string) {
+        try {
+            if (!this.session.isAuthenticated()) return
+            let {name: follower, token} = this.session.getSession()
+            await this.unfollow.exec(follower, followee, token)
+            alert(`You are now unfollowing ${followee}`)
+        } catch (e) {
+            if (e instanceof Error) {
+                console.log(e.message)
+            }
+        }
+        this.setContent('')
+    }
+
+    async getTimeline() {
+        try {
+            if (!this.session.isAuthenticated()) return
+            let {name, token} = this.session.getSession()
+            let response = await this.wall.exec(name, token)
+            this.setPosts(response.body.posts)
+        } catch(e) {
+            if (e instanceof Error) {
+                console.log(e.message)
+            }
         }
     }
 
@@ -76,33 +134,8 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
         this.router.navigate(`/users/${this.getName()}`)
     }
 
-    async doPost() {
-        try {
-            if (this.isPostDisabled()) return
-            if (!this.session.isAuthenticated()) return
-            let content = this.model.content
-            let {name, token} = this.session.getSession()
-            await this.post.exec(name, content, token)
-        } catch (e) {
-            if (e instanceof Error) {
-                alert(e.message)
-            }
-        }
-        this.setContent('')
-    }
-
-    async doFollow(followee: string) {
-        try {
-            if (!this.session.isAuthenticated()) return
-            let {name: follower, token} = this.session.getSession()
-            await this.follow.exec(follower, followee, token)
-            alert(`You are now following ${followee}`)
-        } catch (e) {
-            if (e instanceof Error) {
-                alert(e.message)
-            }
-        }
-        this.setContent('')
+    setPosts(posts) {
+        this.updateModel({ posts })
     }
 }
 

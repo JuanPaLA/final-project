@@ -4,12 +4,24 @@ import com.eclipsesource.json.Json
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 import com.proyecto404.finalProjectJP.core.useCases.Follow
+import com.proyecto404.finalProjectJP.core.useCases.Unfollow
 import io.javalin.Javalin
 import io.javalin.http.Context
 
 class FollowingController(private val http: Javalin, private val core: Core) {
     init {
         http.post("/follows", ::follow)
+        http.put("/follows", ::unfollow)
+    }
+
+    private fun unfollow(ctx: Context) {
+        val json = getJsonFrom(ctx)
+        val follower = json.get("follower").asString()
+        val followee = json.get("followee").asString()
+        val sessionToken = ctx.req.getHeader("Authorization")
+        val token = SessionToken(sessionToken)
+        core.unfollow().exec(Unfollow.Request(follower, followee, token))
+        ctx.status(204)
     }
 
     private fun follow(ctx: Context) {

@@ -15,6 +15,9 @@ import {Header} from "@/ui/layout/header/Header";
 import {GetUsers} from "@/core/useCases/GetUsers";
 import {HttpFollowingService} from "@/core/infrastructure/HttpFollowingService";
 import {Follow} from "@/core/useCases/Follow";
+import {Wall} from "@/core/useCases/Wall";
+import {HttpWallService} from "@/core/infrastructure/HttpWallService";
+import {Unfollow} from "@/core/useCases/Unfollow";
 
 export class WebApp {
     private readonly services: WebAppServices
@@ -43,7 +46,9 @@ export interface WebAppConfig {
     post: Post,
     read: Read,
     listUsers: GetUsers,
-    follow: Follow
+    follow: Follow,
+    wall: Wall,
+    unfollow: Unfollow
 }
 
 export interface WebAppServices extends WebAppConfig {
@@ -56,6 +61,7 @@ export const defaultWebAppConfig = (): WebAppConfig => {
     let postService = new HttpPostService(client)
     let userService = new HttpUserService(client)
     let followingService = new HttpFollowingService(client)
+    let wallService = new HttpWallService(client)
 
     return {
         listUsers: new GetUsers(userService),
@@ -65,6 +71,8 @@ export const defaultWebAppConfig = (): WebAppConfig => {
         router: new NextJsRouter(),
         session: session,
         signup: new Signup(userService),
-        follow: new Follow(followingService)
+        follow: new Follow(followingService),
+        wall: new Wall(wallService),
+        unfollow: new Unfollow(followingService)
     }
 }

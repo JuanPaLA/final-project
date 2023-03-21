@@ -7,4 +7,8 @@ export class HttpFollowingService implements FollowingService {
     async follow(follower: string, followee: string, token: string) {
         await this.httpClient.post('/follows', { follower, followee }, { Authorization: token })
     }
+
+    async unfollow(follower: string, followee: string, token: string) {
+        await this.httpClient.put('/follows', { follower, followee }, { Authorization: token })
+    }
 }

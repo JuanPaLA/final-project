@@ -16,7 +16,7 @@ class JooqPosts(private val credentials: Credentials) : Posts {
             .selectFrom(POSTS)
             .where(POSTS.ID.eq(id))
             .fetch()
-            .map { Post(it.id, it.content, it.userid, it.date) }
+            .map { Post(it.id, it.userid, it.content, it.date) }
             .single()
     }
 
@@ -24,6 +24,7 @@ class JooqPosts(private val credentials: Credentials) : Posts {
         return context()
             .selectFrom(POSTS)
             .where(POSTS.USERID.eq(userName))
+            .orderBy(POSTS.DATE.desc())
             .fetch()
             .map { Post(it.id, it.content, it.userid, it.date) }
     }

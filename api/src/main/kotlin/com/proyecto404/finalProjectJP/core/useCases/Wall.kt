@@ -12,7 +12,8 @@ class Wall(private val posts: Posts, private val users: Users, private val relat
     fun exec(request: Request): Response {
         val requestUser = users.get(request.requestUserName)
         authService.validateToken(request.token, requestUser)
-        val followings = relationships.getFollowings(requestUser.name)
+        var followings = relationships.getFollowings(requestUser.name)
+        followings = followings.plus(requestUser.name)
         val posts = posts.get(followings)
         return Response(posts)
     }

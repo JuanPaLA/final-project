@@ -14,6 +14,15 @@ it('create following relationship', async ()=> {
     verify(client.post('/follows',{ follower: "@alice", followee: "@bob" }, headers )).called()
 })
 
+it('remove following relationship', async ()=> {
+    when(client.put(anything(), anything())).thenResolve(new FakeHttpResponse({id: 1}, 201))
+    let headers = {Authorization: "aToken"}
+
+    await service.unfollow("@alice", "@bob", "aToken")
+
+    verify(client.put('/follows',{ follower: "@alice", followee: "@bob" }, headers )).called()
+})
+
 beforeEach(()=> {
     client = mockEq<HttpClient>()
     service = new HttpFollowingService(instance(client))

@@ -19,6 +19,6 @@ export class HttpUserService implements UserService {
     }
 
     async getUsers(name: string, token: string): Promise<HttpResponse<UsersListResponse>> {
-        return  await this.httpClient.get('/users', {Authorization: token, Requester: name})
+        return  await this.httpClient.get('/users', { Authorization: token, Requester: name })
     }
 }

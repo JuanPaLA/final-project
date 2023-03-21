@@ -10,8 +10,9 @@ export default function SecondaryButton({onClick, value}){
 const StyledButton = styled.span`
   background-color: ${colors.black};
   padding: 10px;
-  color: ${colors.lightGray};
+  color: ${colors.lightGray} !important;
   border-radius: 25%;
+  
   &:hover {
     cursor: pointer;
     background-color: #2F3336;

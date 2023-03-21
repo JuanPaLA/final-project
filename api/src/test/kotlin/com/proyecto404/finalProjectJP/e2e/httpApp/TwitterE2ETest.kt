@@ -146,6 +146,51 @@ class TwitterE2ETest {
         }
     }
 
+    @Test
+    fun wall() {
+        Given {
+            val juan = User(1, "@juan", "1234")
+            val bob = User(2, "@bob", "1234")
+            juan.addToken(SessionToken("aToken"))
+            users.add(juan)
+            users.add(bob)
+            posts.add(Post(1, "@bob", "What a beautiful day!"))
+            posts.add(Post(2, "@bob", "Is it?"))
+            relationships.add(Relationship(juan, bob))
+            header("Authorization", "aToken")
+        } When {
+            get("$baseUrl/walls/@juan")
+        } Then {
+            statusCode(200)
+            body("posts.size()", CoreMatchers.equalTo(2))
+        }
+    }
+
+    @Test
+    fun unfollow() {
+        Given {
+            val juan = User(1, "@juan", "1234")
+            val bob = User(2, "@bob", "1234")
+            juan.addToken(SessionToken("aToken"))
+            users.add(juan)
+            users.add(bob)
+            relationships.add(Relationship(juan, bob))
+            header("Authorization", "aToken")
+            body(
+                JsonObject()
+                    .add("follower", "@juan")
+                    .add("followee", "@bob")
+                    .toString()
+            )
+        } When {
+            delete("$baseUrl/follows")
+        } Then {
+            statusCode(204)
+        }
+
+        assertThat(relationships.getFollowers("@bob")).isEmpty()
+    }
+
     @BeforeEach
     fun setup() {
         httpApp.start()
