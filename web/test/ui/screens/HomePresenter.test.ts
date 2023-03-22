@@ -9,6 +9,8 @@ import {GetUsers} from "@/core/useCases/GetUsers";
 import {Follow} from "@/core/useCases/Follow";
 import {Wall} from "@/core/useCases/Wall";
 import {Unfollow} from "@/core/useCases/Unfollow";
+import {Followers} from "@/core/useCases/Followers";
+import {FollowingService} from "@/core/model/FollowingService";
 
 it('logout navigates to signup', () => {
     when(session.isAuthenticated()).thenReturn(true)
@@ -112,7 +114,6 @@ it('do unfollow request of given user', async () => {
     await presenter.doUnfollow("@bob")
 
     verify(unfollow.exec("@alice", "@bob", "aToken")).once()
-
 })
 
 beforeEach(() => {
@@ -120,6 +121,7 @@ beforeEach(() => {
     post = mockEq<Post>()
     follow = mockEq<Follow>()
     unfollow = mockEq<Unfollow>()
+    followers = mockEq<Followers>()
     listUsers = mockEq<GetUsers>()
     session = mock<SessionState>()
     wall = mockEq<Wall>()
@@ -133,6 +135,7 @@ let session: SessionState
 let post: Post
 let follow: Follow
 let unfollow: Unfollow
+let followers: Followers
 let listUsers: GetUsers
 let longPost: string
 let wall: Wall

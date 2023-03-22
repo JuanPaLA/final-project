@@ -20,6 +20,7 @@ const Tooltip = styled.div`
   visibility: initial;
   position: relative;
   display: inline-block;
+  margin: 10px 10px;
 
   .tooltip-text {
     visibility: hidden;

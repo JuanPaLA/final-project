@@ -18,6 +18,8 @@ import {Follow} from "@/core/useCases/Follow";
 import {Wall} from "@/core/useCases/Wall";
 import {HttpWallService} from "@/core/infrastructure/HttpWallService";
 import {Unfollow} from "@/core/useCases/Unfollow";
+import {Followers} from "@/core/useCases/Followers";
+import {Followings} from "../../test/core/useCases/Followings";
 
 export class WebApp {
     private readonly services: WebAppServices
@@ -48,7 +50,9 @@ export interface WebAppConfig {
     listUsers: GetUsers,
     follow: Follow,
     wall: Wall,
-    unfollow: Unfollow
+    unfollow: Unfollow,
+    followers: Followers,
+    followings: Followings
 }
 
 export interface WebAppServices extends WebAppConfig {
@@ -73,6 +77,8 @@ export const defaultWebAppConfig = (): WebAppConfig => {
         signup: new Signup(userService),
         follow: new Follow(followingService),
         wall: new Wall(wallService),
-        unfollow: new Unfollow(followingService)
+        unfollow: new Unfollow(followingService),
+        followers: new Followers(followingService),
+        followings: new Followings(followingService)
     }
 }

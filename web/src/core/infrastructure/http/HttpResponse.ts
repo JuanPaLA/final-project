@@ -25,14 +25,26 @@ export interface PostResponse {
 }
 
 export interface ReadResponse {
-    posts: Post[] | null;
+    posts: Post[];
     error?: string;
 }
 
 export interface UserResponse {
+    user: UserVM[];
     error?: string
 }
 
 export interface UsersListResponse {
     users: UserVM[]
+    error?: string
+}
+
+export interface FollowingsResponse {
+    followings: string[]
+    error?: string
+}
+
+export interface FollowersResponse {
+    followers: string[]
+    error?: string
 }

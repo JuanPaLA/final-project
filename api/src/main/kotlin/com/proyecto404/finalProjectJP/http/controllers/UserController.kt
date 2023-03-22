@@ -13,15 +13,16 @@ import io.javalin.Javalin
 import io.javalin.http.Context
 
 class UserController(private val http: Javalin, private val core: Core) {
+
     init {
         http.post("/users", ::createUser)
         http.get("/users", ::getUsers)
     }
 
     private fun getUsers(ctx: Context) {
-        val token = SessionToken(ctx.req.getHeader("Authorization"))
-        val requester = ctx.req.getHeader("Requester")
         try {
+            val token = SessionToken(ctx.req.getHeader("Authorization"))
+            val requester = ctx.req.getHeader("Requester")
             val users = core.getUsers().exec(GetUsers.Request(requester, token))
             val usersArray = Json.array()
             val followers = core.followers().exec(Followers.Request(requester, requester, token))
@@ -43,10 +44,10 @@ class UserController(private val http: Javalin, private val core: Core) {
     }
 
     private fun createUser(ctx: Context) {
-        val json = getJsonFrom(ctx)
-        val userName = json.get("name").asString()
-        val password = json.get("password").asString()
         try {
+            val json = getJsonFrom(ctx)
+            val userName = json.get("name").asString()
+            val password = json.get("password").asString()
             core.signup().exec(SignUp.Request(userName, password))
             ctx.status(201)
         } catch (e: RepeatedUsernameError) {

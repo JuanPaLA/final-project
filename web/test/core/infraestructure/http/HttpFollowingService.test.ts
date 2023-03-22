@@ -23,6 +23,15 @@ it('remove following relationship', async ()=> {
     verify(client.put('/follows',{ follower: "@alice", followee: "@bob" }, headers )).called()
 })
 
+it('get followers of given account', async () => {
+    when(client.put(anything(), anything())).thenResolve(new FakeHttpResponse({id: 1}, 200))
+    let headers = { Authorization: "aToken", Requester: "@alice" }
+
+    await service.getFollowers("@alice", "@bob", "aToken")
+
+    verify(client.get('/followers/@bob', headers )).called()
+})
+
 beforeEach(()=> {
     client = mockEq<HttpClient>()
     service = new HttpFollowingService(instance(client))
