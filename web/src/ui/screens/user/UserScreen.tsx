@@ -3,7 +3,7 @@ import {UserPresenter} from "@/ui/screens/user/UserPresenter";
 import {useAppPresenter} from "@/ui/lib/presenters/useAppPresenter";
 import React from "react";
 import {StyledContainer, StyledMain, StyledNav} from "@/ui/layout/styles/Globals";
-import {TweetList} from "@/ui/components/post/TweetList";
+import {TweetList} from "@/ui/components/lists/TweetList";
 
 const userPresenter = (onChange, services: WebAppServices) => new UserPresenter(
     onChange,

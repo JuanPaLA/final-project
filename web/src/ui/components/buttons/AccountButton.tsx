@@ -1,23 +1,17 @@
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 import styled from "styled-components";
 import {colors} from "@/ui/layout/styles/Globals";
-import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 export const AccountButton = ({value}) => {
+    const router = useRouter()
 
     return (
         <Tooltip>
-            <Link href={`/users/${value}`}>
-                <SecondaryButton
-                    onClick={ () => console.log("") }
-                    value={value}
-                />
-            </Link>
-            {/*<span*/}
-            {/*    className={'tooltip-text'}*/}
-            {/*    onClick={() => alert('coso') }*/}
-            {/*>*/}
-            {/*    Follow {value}</span>*/}
+            <SecondaryButton
+                onClick={() => router.push(`/users/${value}`)}
+                value={value}
+            />
         </Tooltip>
     )
 }
@@ -45,6 +39,3 @@ const Tooltip = styled.div`
     visibility: visible;
   }
 `;
-
-
-

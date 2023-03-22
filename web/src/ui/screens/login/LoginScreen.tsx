@@ -1,13 +1,21 @@
 import {WebAppServices} from "@/ui/WebApp";
 import {useAppPresenter} from "@/ui/lib/presenters/useAppPresenter";
-import {Container, FormControl, StyledAnchor, StyledContainer, StyledMain, StyledNav} from "@/ui/layout/styles/Globals";
+import {Container, FormControl, StyledContainer, StyledMain, StyledNav} from "@/ui/layout/styles/Globals";
 import {LoginPresenter} from "@/ui/screens/login/LoginPresenter";
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
+import React from "react";
 
 const loginPresenter = (onChange, services: WebAppServices) => new LoginPresenter(onChange, services.login, services.router)
 
 export const LoginScreen = () => {
     const presenter = useAppPresenter(loginPresenter)
+
+    const inputRef = React.useRef<HTMLInputElement>(null)
+
+    React.useEffect(() => {
+        inputRef.current?.focus()
+    }, [])
+
     return (
         <StyledContainer>
             <StyledNav></StyledNav>
@@ -16,8 +24,11 @@ export const LoginScreen = () => {
                     <h1>Login</h1>
                     <FormControl>
                         <label>Name:</label>
-                        <input value={presenter.model.username}
-                               onChange={(e) => presenter.setUsername(e.target.value)}/>
+                        <input
+                            value={presenter.model.username}
+                            ref={inputRef}
+                            onChange={(e) => presenter.setUsername(e.target.value)}
+                        />
                     </FormControl>
                     <FormControl>
                         <label>Password:</label>

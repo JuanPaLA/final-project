@@ -26,6 +26,7 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
     }
 
     async start() {
+        this.setContent('')
         this.navigateToLogin();
         await this.getUsers();
         await this.getTimeline();
@@ -60,7 +61,7 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
                 alert(e.message)
             }
         }
-        this.setContent('')
+        this.start()
     }
 
     async doFollow(followee: string) {
@@ -75,6 +76,7 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
             }
         }
         this.setContent('')
+        this.start()
     }
 
     async doUnfollow(followee: string) {
@@ -89,6 +91,7 @@ export class HomePresenter extends DefaultPresenter<HomeVM> {
             }
         }
         this.setContent('')
+        this.start()
     }
 
     async getTimeline() {

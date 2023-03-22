@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {colors} from "@/ui/layout/styles/Globals";
 import styled from "styled-components";
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
+import {useRouter} from "next/router";
 
-function SearchBar({users, onClick}) {
+function SearchBar({current, users, follow, unfollow}) {
     const [searchText, setSearchText] = useState('');
     const [filteredUsers, setFilteredUsers] = useState(users);
+    const router = useRouter()
 
     useEffect(() => {
         setFilteredUsers(
@@ -35,12 +37,19 @@ function SearchBar({users, onClick}) {
                 }
             >
                 {filteredUsers.map((user) => (
-                    <li key={user.id}>
-                        <SecondaryButton
-                            value={`Follow ${user.name}`}
-                            onClick={() => onClick(user.name)}
-                        />
-                    </li>
+                    current == user.name ? null :
+                        <li key={user.id}>
+                            <SecondaryButton
+                                value={`${user.isFollowee == false ? 'Follow' : 'Unfollow'} ${user.name}`}
+                                onClick={
+                                    user.isFollowee == false ? () => follow(user.name) : () => unfollow(user.name)
+                                }
+                            />
+                            <SecondaryButton
+                                value={'timeline'}
+                                onClick={() => router.push(`/users/${user.name}`)}
+                            />
+                        </li>
                 ))}
             </UserList>
         </div>

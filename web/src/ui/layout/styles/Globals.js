@@ -43,11 +43,6 @@ export const Container = styled.div`
 export const FormControl = styled.div`
   margin-bottom: 10px;
 `
-export const StyledAnchor = styled.a`
-  margin-top: 10px;
-  text-decoration: none;
-  color: dodgerblue;
-`
 
 export const StyledContainer = styled.div`
   display: grid;
@@ -72,7 +67,7 @@ export const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   background-color: ${colors.black};
   color: ${colors.white};
   padding: 3vw 1vh;

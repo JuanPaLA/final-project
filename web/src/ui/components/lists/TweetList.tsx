@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Tweet} from "@/ui/components/post/Tweet";
+import {Tweet} from "@/ui/components/lists/Tweet";
 
 export const TweetList = ({posts}) => {
     return (

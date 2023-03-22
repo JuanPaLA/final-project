@@ -183,13 +183,15 @@ class TwitterE2ETest {
                     .toString()
             )
         } When {
-            delete("$baseUrl/follows")
+            put("$baseUrl/follows")
         } Then {
             statusCode(204)
         }
 
         assertThat(relationships.getFollowers("@bob")).isEmpty()
     }
+
+
 
     @BeforeEach
     fun setup() {

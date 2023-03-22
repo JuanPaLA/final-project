@@ -5,6 +5,8 @@ import com.eclipsesource.json.JsonObject
 import com.proyecto404.finalProjectJP.core.Core
 import com.proyecto404.finalProjectJP.core.domain.exceptions.RepeatedUsernameError
 import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
+import com.proyecto404.finalProjectJP.core.useCases.Followers
+import com.proyecto404.finalProjectJP.core.useCases.Following
 import com.proyecto404.finalProjectJP.core.useCases.GetUsers
 import com.proyecto404.finalProjectJP.core.useCases.SignUp
 import io.javalin.Javalin
@@ -22,10 +24,14 @@ class UserController(private val http: Javalin, private val core: Core) {
         try {
             val users = core.getUsers().exec(GetUsers.Request(requester, token))
             val usersArray = Json.array()
+            val followers = core.followers().exec(Followers.Request(requester, requester, token))
+            val followings = core.following().exec(Following.Request(requester, requester, token))
             users.users.forEach {
                 usersArray.add(JsonObject()
                     .add("id", it.id)
                     .add("name", it.name)
+                    .add("isFollower", followers.followers.contains(it.name))
+                    .add("isFollowee", followings.follows.contains(it.name))
                 )
             }
             val response = JsonObject().add("users", usersArray).toString()

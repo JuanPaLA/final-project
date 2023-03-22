@@ -7,13 +7,13 @@ import com.proyecto404.finalProjectJP.core.domain.services.SessionToken
 
 class Following (private val users: Users, private val relationships: Relationships, private val authService: AuthService) {
     fun exec(request: Request): Response {
-        val requesterUser = users.get(request.requesterUserName)
+        val requesterUser = users.get(request.requester)
         authService.validateToken(request.token, requesterUser)
-        val followedUser = users.get(request.usersFollowing)
+        val followedUser = users.get(request.following)
         val follows = relationships.getFollowings(followedUser.name)
         return Response(follows)
     }
 
-    data class Request(val requesterUserName: String, val usersFollowing: String, val token: SessionToken)
+    data class Request(val requester: String, val following: String, val token: SessionToken)
     data class Response(val follows: List<String>)
 }

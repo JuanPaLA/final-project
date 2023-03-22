@@ -5,8 +5,8 @@ import {Container, StyledContainer, StyledMain, StyledNav} from "@/ui/layout/sty
 import SecondaryButton from "@/ui/components/buttons/SecondaryButton";
 import React from "react";
 import SearchBar from "@/ui/components/searchBar/SearchBar";
-import {TweetList} from "@/ui/components/post/TweetList";
-import {NewTweet} from "@/ui/components/post/NewTweet";
+import {TweetList} from "@/ui/components/lists/TweetList";
+import {NewTweet} from "@/ui/components/lists/NewTweet";
 
 const homePresenter = (onChange, services: WebAppServices) => new HomePresenter(
     onChange,
@@ -40,7 +40,12 @@ export const HomeScreen = () => {
                     <TweetList posts={presenter.model.posts}/>
                 </Container>
             </StyledMain>
-            <SearchBar users={presenter.model.users} onClick={(e) => presenter.doFollow(e)}/>
+            <SearchBar
+                current={presenter.getName()}
+                users={presenter.model.users}
+                follow={(e) => presenter.doFollow(e)}
+                unfollow={(e) => presenter.doUnfollow(e)}
+            />
         </StyledContainer>
     )
 }
