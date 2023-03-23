@@ -1,6 +1,6 @@
 export interface AuthService {
     login(username: string, password: string): Promise<LoginResponse>
-    signUp(username: string, password: string): Promise<SignUpResponse>
+    signUp(name: string, password: string): Promise<void>
 }
 
 export interface LoginResponse {

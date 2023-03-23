@@ -5,111 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.bundle/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.env.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.ruby-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/_node-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/_BUCK" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/build_defs.bzl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/debug.keystore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/debug/java/com/social_network/ReactNativeFlipper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/newarchitecture/MainApplicationReactNativeHost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/newarchitecture/components/MainComponentsRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/newarchitecture/modules/MainApplicationTurboModuleManagerDelegate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationModuleProvider.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationModuleProvider.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationTurboModuleManagerDelegate.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationTurboModuleManagerDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainComponentsRegistry.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainComponentsRegistry.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/OnLoad.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/drawable/rn_edit_text_material.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/.xcode.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/Podfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network.xcodeproj/xcshareddata/xcschemes/social_network.xcscheme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/AppDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/AppDelegate.mm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/Images.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/Images.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/main.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_networkTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/social_networkTests/social_networkTests.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/metro.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/mobile.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/Core.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpAuthService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpClient.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpPostService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/axios/AxiosHttpClient.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/model/auth/AuthService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/model/auth/InvalidAuthError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/core/useCases/Signup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/MobileApp.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/PresenterFactory.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/components/context/PresentersContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/MainLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/Navigation/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/Navigation/NavigationPresenter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/screens/Home/HomePresenter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/screens/Home/HomeScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/Observable.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/navigator/NavigationProp.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/navigator/Navigator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/navigator/ReactNavigator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/presenters/ChangeFunc.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/presenters/usePresenter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/responsive/ResponsiveUtils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/session/ReactNativeSessionStorage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/session/Session.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/session/SessionStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/styles/styled.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/test/App-test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00a3db8d-f5a9-4440-b41c-ce3ea1f19fb7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00a3db8d-f5a9-4440-b41c-ce3ea1f19fb7/storage_v2/_src_/database/twitter.c6phyQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00a3db8d-f5a9-4440-b41c-ce3ea1f19fb7/storage_v2/_src_/database/twitter.c6phyQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final_project_jp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/final_project_jp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpAuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpAuthService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/core/model/auth/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/core/model/auth/AuthService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/ui/PresenterFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/ui/PresenterFactory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/ui/layouts/Navigation/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/Navigation/Navigation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +115,7 @@
       <recent name="C:\404\Katas\final_project_jp\api\src\main\resources\db\structure" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.api [build]">
+  <component name="RunManager" selected="Kotlin.HttpMainKt">
     <configuration name="api [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -306,8 +209,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.api [build]" />
         <item itemvalue="Kotlin.HttpMainKt" />
+        <item itemvalue="Gradle.api [build]" />
         <item itemvalue="Gradle.api [generateJooq]" />
         <item itemvalue="Gradle.api [flywayMigrate]" />
         <item itemvalue="Gradle.api [flywayClean]" />

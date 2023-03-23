@@ -1,11 +1,11 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { ReactNavigator } from '@/ui/services/navigator/ReactNavigator'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack'
-import { HomeScreen } from '@/ui/screens/Home/HomeScreen'
 import { rv } from '@/ui/services/responsive/ResponsiveUtils'
 import { usePresenterFactory } from '@/ui/components/context/PresentersContext'
 import { usePresenter } from '@/ui/services/presenters/usePresenter'
+import { SignupScreen } from '@/ui/screens/Signup/SignupScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -16,9 +16,7 @@ export const Navigation: FC<Props> = (props) => {
         <NavigationContainer ref={props.navigator.ref}>
             <Stack.Navigator screenOptions={defaultScreenOptions}>
                 <Stack.Group>
-                    <Stack.Screen name="Home">
-                        {props => (<HomeScreen navigator={props.navigation}/>)}
-                    </Stack.Screen>
+                    <Stack.Screen name="Signup" component={SignupScreen}/>
                 </Stack.Group>
             </Stack.Navigator>
         </NavigationContainer>
