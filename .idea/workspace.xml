@@ -5,23 +5,111 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4942319b-24ba-4e3f-94b4-4d48fd6bfcbb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/.bundle/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/.env.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/.ruby-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/_node-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/_BUCK" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/build_defs.bzl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/debug.keystore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/debug/java/com/social_network/ReactNativeFlipper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/newarchitecture/MainApplicationReactNativeHost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/newarchitecture/components/MainComponentsRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/social_network/newarchitecture/modules/MainApplicationTurboModuleManagerDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationModuleProvider.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationModuleProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationTurboModuleManagerDelegate.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainApplicationTurboModuleManagerDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainComponentsRegistry.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/MainComponentsRegistry.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/jni/OnLoad.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/drawable/rn_edit_text_material.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/android/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/.xcode.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/Podfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network.xcodeproj/xcshareddata/xcschemes/social_network.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/AppDelegate.mm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/Images.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/Images.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_network/main.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_networkTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/ios/social_networkTests/social_networkTests.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/metro.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/mobile.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/Core.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpAuthService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpClient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/HttpPostService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/infrastructure/http/axios/AxiosHttpClient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/model/auth/AuthService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/model/auth/InvalidAuthError.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/core/useCases/Signup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/MobileApp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/PresenterFactory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/components/context/PresentersContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/MainLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/Navigation/Navigation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/layouts/Navigation/NavigationPresenter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/screens/Home/HomePresenter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/screens/Home/HomeScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/Observable.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/navigator/NavigationProp.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/navigator/Navigator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/navigator/ReactNavigator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/presenters/ChangeFunc.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/presenters/usePresenter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/responsive/ResponsiveUtils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/session/ReactNativeSessionStorage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/session/Session.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/session/SessionStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/ui/services/styles/styled.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/test/App-test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00a3db8d-f5a9-4440-b41c-ce3ea1f19fb7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Followers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Followers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Following.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/core/useCases/Following.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/kotlin/com/proyecto404/finalProjectJP/http/controllers/UserController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/kotlin/com/proyecto404/finalProjectJP/e2e/httpApp/TwitterE2ETest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/components/buttons/AccountButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/components/buttons/AccountButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/components/post/NewTweet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/components/lists/NewTweet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/components/post/Tweet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/components/lists/Tweet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/components/post/TweetList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/components/lists/TweetList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/components/searchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/components/searchBar/SearchBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/layout/styles/Globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/layout/styles/Globals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomePresenter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/home/HomeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/login/LoginScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/login/LoginScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/signUp/SignUpScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/screens/user/UserScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/ui/viewModels/UserVM.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/ui/viewModels/UserVM.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_project_jp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/final_project_jp.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,30 +145,6 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="final_project_jp" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="flyway" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="final_project_jp" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="jooq" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="final_project_jp" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="final_project_jp" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -94,6 +158,7 @@
         <option value="Kotlin Class" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -116,56 +181,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/404/Katas/final_project_jp/api/src/main/resources/db/structure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/404/Katas/final_project_jp/web/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\404\\Katas\\final_project_jp\\web\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/404/Projects/final_project_jp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/404/Katas/final_project_jp/web/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\404\\Katas\\final_project_jp\\web\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\404\Katas\final_project_jp\api\src\main\resources\db\structure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\404\Katas\final_project_jp\mobile" />
       <recent name="C:\404\Katas\final_project_jp\api\src\main\resources\db\structure" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.HttpMainKt">
-    <configuration name="TwitterE2ETest.unfollow" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.api [build]">
+    <configuration name="api [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.proyecto404.finalProjectJP.e2e.httpApp.TwitterE2ETest.unfollow&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -233,19 +297,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="HttpMainKt" type="JetRunConfigurationType" nameIsGenerated="true">
+    <configuration name="HttpMainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.proyecto404.finalProjectJP.http.HttpMainKt" />
-      <module name="org.example.final_project_jp.main" />
+      <module name="org.example.final_project_jp.main~1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.api [build]" />
+        <item itemvalue="Kotlin.HttpMainKt" />
         <item itemvalue="Gradle.api [generateJooq]" />
         <item itemvalue="Gradle.api [flywayMigrate]" />
         <item itemvalue="Gradle.api [flywayClean]" />
-        <item itemvalue="Gradle.TwitterE2ETest.unfollow" />
       </list>
     </recent_temporary>
   </component>
@@ -259,10 +324,25 @@
       <updated>1679076529170</updated>
       <workItem from="1679076529174" duration="328000" />
       <workItem from="1679076927239" duration="56756000" />
+      <workItem from="1679516412930" duration="457000" />
+      <workItem from="1679516891181" duration="1205000" />
+      <workItem from="1679518128024" duration="6358000" />
+      <workItem from="1679585554969" duration="367000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

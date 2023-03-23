@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "extends": ["@react-native-community"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ]
+    }
+  ],
+  "rules": {
+    "no-shadow": "off",
+    "no-undef": "off",
+    "no-new": "off",
+    "dot-notation": "off",
+    "prettier/prettier": "off",
+    "semi": ["error", "never"],
+    "curly": "off",
+    "react/react-in-jsx-scope": ["error"],
+    "react-native/no-inline-styles": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/no-unused-vars": [
+      "warn", {
+      "vars": "all",
+      "args": "none",
+      "ignoreRestSiblings": false
+    }]
+  }
+}
