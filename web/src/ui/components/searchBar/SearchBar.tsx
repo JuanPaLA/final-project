@@ -21,6 +21,12 @@ function SearchBar({current, users, follow, unfollow}) {
         setSearchText(event.target.value);
     };
 
+    const handleClick = (user) => {
+        if (user.isFollowee == false) follow(user.name)
+        else unfollow(user.name)
+        setSearchText('');
+    }
+
     return (
         <div>
             <StyledSearchBar
@@ -41,9 +47,7 @@ function SearchBar({current, users, follow, unfollow}) {
                         <li key={user.id}>
                             <SecondaryButton
                                 value={`${user.isFollowee == false ? 'Follow' : 'Unfollow'} ${user.name}`}
-                                onClick={
-                                    user.isFollowee == false ? () => follow(user.name) : () => unfollow(user.name)
-                                }
+                                onClick={() => handleClick(user)}
                             />
                             <SecondaryButton
                                 value={'timeline'}

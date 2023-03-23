@@ -11,7 +11,6 @@ export class HttpAuthService implements AuthService {
     async login(name: string, password: string) {
         try {
             let response = await this.httpClient.post<LoginResponse>('/login', { name, password })
-            console.log(response, 15)
             let userSession = new UserSession(name, response.body.token)
             this.session.authenticate(userSession)
         } catch (e) {
