@@ -191,7 +191,49 @@ class TwitterE2ETest {
         assertThat(relationships.getFollowers("@bob")).isEmpty()
     }
 
+    @Test
+    fun followers() {
+        Given {
+            val juan = User(1, "@juan", "1234")
+            val bob = User(2, "@bob", "1234")
+            users.add(juan)
+            users.add(bob)
+            juan.addToken(SessionToken("aToken"))
+            relationships.add(Relationship(juan, bob))
+            header("Authorization", "aToken")
+            header("Requester", "@juan")
+        } When {
+            get("$baseUrl/followers/@bob")
+        } Then {
+            statusCode(200)
+            body("followers", CoreMatchers.notNullValue())
+            body("followers.size()", CoreMatchers.equalTo(1))
+        }
 
+        assertThat(relationships.getFollowers("@bob")).isEqualTo(listOf("@juan"))
+    }
+
+    @Test
+    fun followings() {
+        Given {
+            val juan = User(1, "@juan", "1234")
+            val bob = User(2, "@bob", "1234")
+            users.add(juan)
+            users.add(bob)
+            juan.addToken(SessionToken("aToken"))
+            relationships.add(Relationship(juan, bob))
+            header("Authorization", "aToken")
+            header("Requester", "@juan")
+        } When {
+            get("$baseUrl/followings/@juan")
+        } Then {
+            statusCode(200)
+            body("followings", CoreMatchers.notNullValue())
+            body("followings.size()", CoreMatchers.equalTo(1))
+        }
+
+        assertThat(relationships.getFollowings("@juan")).isEqualTo(listOf("@bob"))
+    }
 
     @BeforeEach
     fun setup() {

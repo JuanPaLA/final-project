@@ -7,6 +7,7 @@ import React from "react";
 import SearchBar from "@/ui/components/searchBar/SearchBar";
 import {TweetList} from "@/ui/components/lists/TweetList";
 import {NewTweet} from "@/ui/components/lists/NewTweet";
+import {UserList} from "@/ui/components/lists/UserList";
 
 const homePresenter = (onChange, services: WebAppServices) => new HomePresenter(
     onChange,
@@ -32,11 +33,18 @@ export const HomeScreen = () => {
                     onClick={() => presenter.logout()}
                     value={"logout"}
                 />
+                <UserList
+                    users={presenter.model.users.filter(u => u.isFollowee == true)}
+                    title={"Following"}
+                />
+                <UserList
+                    users={presenter.model.users.filter(u => u.isFollower == true)}
+                    title={"Follows you"}
+                />
             </StyledNav>
             <StyledMain>
                 <Container>
                     <NewTweet presenter={presenter}/>
-
                     <TweetList posts={presenter.model.posts}/>
                 </Container>
             </StyledMain>

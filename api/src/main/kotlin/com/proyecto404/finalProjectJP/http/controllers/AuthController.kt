@@ -15,10 +15,10 @@ class AuthController(private val http: Javalin, private val core: Core) {
     }
 
     private fun login(ctx: Context) {
-        val json = getJsonFrom(ctx)
-        val userName = json.get("name").asString()
-        val password = json.get("password").asString()
         try {
+            val json = getJsonFrom(ctx)
+            val userName = json.get("name").asString()
+            val password = json.get("password").asString()
             val token = core.login().exec(Request(userName, password))
             val response = JsonObject().add("token", token.sessionToken.toString()).toString()
             ctx.status(200).json(response)

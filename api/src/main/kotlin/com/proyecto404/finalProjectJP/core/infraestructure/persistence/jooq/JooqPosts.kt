@@ -24,7 +24,7 @@ class JooqPosts(private val credentials: Credentials) : Posts {
         return context()
             .selectFrom(POSTS)
             .where(POSTS.USERID.eq(userName))
-            .orderBy(POSTS.DATE.desc())
+            .orderBy(POSTS.DATE.asc())
             .fetch()
             .map { Post(it.id, it.content, it.userid, it.date) }
     }

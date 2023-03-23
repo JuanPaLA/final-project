@@ -11,11 +11,9 @@ export class HttpAuthService implements AuthService {
     async login(name: string, password: string) {
         try {
             let response = await this.httpClient.post<LoginResponse>('/login', { name, password })
-            console.log(response, 15)
             let userSession = new UserSession(name, response.body.token)
             this.session.authenticate(userSession)
         } catch (e) {
-            console.log(19,e)
             if (e.response.status === 401) {
                 throw new InvalidCredentialsError(`Invalid credentials for user ${name}`)
             } else if (e.response.status == 404) {
