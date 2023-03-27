@@ -10,6 +10,7 @@ import {mockEq} from "../../../../web/test/common/ts-mockito-extensions";
 import {SignUp} from "@/core/useCases/Signup";
 import {HttpAuthService} from "@/core/infrastructure/http/HttpAuthService";
 import {AxiosHttpClient} from "@/core/infrastructure/http/axios/AxiosHttpClient";
+import { AuthService } from '@/core/model/auth/AuthService'
 
 it('name and passwords starts empty', () => {
     presenter.start()
@@ -54,8 +55,7 @@ it('username must start with @', () => {
 })
 
 it('failed signup shows error message', async () => {
-    let service = new HttpAuthService()
-    when(await core.signUp().exec(anything(), anything())).thenReject(new Error("There was a network error"))
+    when(await signUp.exec(anything(), anything())).thenReject(new Error("There was a network error"))
     presenter.setName(`@alice`)
     presenter.setPassword(`1234`)
 
@@ -66,14 +66,14 @@ it('failed signup shows error message', async () => {
 
 beforeEach(() => {
     core = mockEq(Core)
-    // @ts-ignore
+    signUp = mockEq(SignUp)
+    when(core.signUp()).thenReturn(instance(signUp))
     session = mockEq<SessionStorage>()
     presenter = new SignupPresenter(onChange, instance(core), instance(session))
 })
 
 let presenter: SignupPresenter
 let core: Core
+let signUp: SignUp
 let session: SessionStorage
 const onChange: ChangeFunc = () => { }
-
-
