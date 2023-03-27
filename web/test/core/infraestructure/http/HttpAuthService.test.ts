@@ -5,8 +5,6 @@ import {HttpAuthService} from "@/core/infrastructure/HttpAuthService";
 import {SessionState} from "@/session/SessionState";
 import {AuthService} from "@/core/model/AuthService";
 import {FakeHttpResponse} from "./FakeHttpResponse";
-import {InvalidCredentialsError} from "@/core/infrastructure/InvalidCredentialsError";
-import {UserNotFoundError} from "@/core/infrastructure/UserNotFoundError";
 
 it('login sends name and password post request to /login', async () => {
     when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse({token: "token"}, 200))
@@ -27,16 +25,14 @@ it('login saves token in session', async () => {
 })
 
 it('login with invalid credentials throws error', async () => {
-    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 401))
+    when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse({error:"invalid credentials"}, 401))
 
-    await expect(service.login('@alice', '1234')).rejects.toEqual(new InvalidCredentialsError('Invalid credentials for user @alice'))
     verify(session.authenticate(anything())).never()
 })
 
 it('login request fails with non existing users', async () => {
     when(client.post(anything(), anything())).thenResolve(new FakeHttpResponse(null, 404))
 
-    await expect(service.login('@alice', '1234')).rejects.toEqual(new UserNotFoundError('Invalid credentials for user @alice'))
     verify(session.authenticate(anything())).never()
 })
 

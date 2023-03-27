@@ -1,10 +1,9 @@
 import { AuthService, SignUpResponse } from '../model/auth/AuthService'
 
 export class SignUp {
-    constructor(private authService: AuthService) {
-    }
+    constructor(private authService: AuthService) { }
 
-    async exec(username: string, password: string): Promise<SignUpResponse> {
-        return await this.authService.signUp(username, password)
+    async exec(name: string, password: string): Promise<void> {
+        return await this.authService.signUp(name, password)
     }
 }
